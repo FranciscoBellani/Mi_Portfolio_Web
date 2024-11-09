@@ -1,4 +1,74 @@
 body
 {
-    background-color: #f3f3f3;
+    background-color: #f8f9fa !important;
 }
+.logo {
+    width: 80px; /* Ajusta el tamaño del logo */
+    height: auto; /* Mantiene la proporción del logo */
+    margin-left: 25%;   
+  }
+/* Estilo para los enlaces de la barra de navegación */
+.navbar-nav .nav-link {
+    font-weight: 600; /* Engrosar el texto */
+    font-size: 16px; /* Ajusta el tamaño de letra si lo deseas */
+    color: #484747; /* Color del texto */
+    padding-left: 21px; /* Espaciado entre los enlaces */
+    padding-right: 15px; /* Espaciado entre los enlaces */
+    transition: color 0.3s ease; /* Efecto suave al pasar el ratón */
+    font-family: 'Roboto Condensed', sans-serif; /* Usando la fuente Roboto Condensed */
+  }
+  
+  /* Estilo para el enlace activo */
+  .navbar-nav .nav-link.active {
+    color: #343434; /* Color de los enlaces activos */
+  }
+  
+  /* Efecto hover para los enlaces */
+  .navbar-nav .nav-link:hover {
+    color: #343434; /* Color de los enlaces al pasar el ratón */
+  }
+  
+  /* Estilo para los elementos del menú (li) */
+  .navbar-nav {
+    margin-left: 20px; /* Despega el menú a la derecha del logo */
+    display: flex;
+    gap: 15px; /* Espacio entre los elementos del menú */
+  }
+  
+  /* Estilo para el botón del menú en dispositivos pequeños */
+  .navbar-toggler {
+    border-color: #fff; /* Color del borde */
+  }
+  
+  /* Estilo para los iconos de los botones en móviles */
+  .navbar-toggler-icon {
+    background-color: #fff; /* Color del icono del menú */
+  }
+  
+  /* Estilo para el menú en pantallas pequeñas */
+  @media (max-width: 768px) {
+    .navbar-nav {
+      margin-left: 0; /* Elimina el margen en pantallas pequeñas */
+      flex-direction: column; /* Hace que los elementos del menú se alineen verticalmente */
+    }
+  
+    .nav-link {
+      font-size: 16px; /* Ajusta el tamaño de los enlaces en pantallas pequeñas */
+      padding: 10px 0; /* Ajusta el espaciado vertical */
+    }
+  }
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+.titulo {
+    font-family: 'Roboto Condensed', sans-serif; /* Usando la fuente Roboto Condensed */
+    font-size: 210px; /* Tamaño grande */
+    font-weight: bold; /* Haciendo la letra negrita */
+    text-align: left; /* Alineado a la izquierda */
+    margin: 12% 0 0 9%;
+}
+.subtitulo  {
+    font-family: 'Roboto Condensed', sans-serif; /* Misma tipografía */
+    font-size: 20px; /* Más pequeño que el HOLA */
+    color: #333; /* Color de texto */
+    text-align: left; /* Alineado a la izquierda */
+    margin: -2.5% 0 0 10%;
+  }
