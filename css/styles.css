@@ -1,74 +1,121 @@
-body
-{
-    background-color: #f8f9fa !important;
+body {
+  background-color: #f8f9fa !important;
 }
 .logo {
-    width: 80px; /* Ajusta el tamaño del logo */
-    height: auto; /* Mantiene la proporción del logo */
-    margin-left: 25%;   
-  }
+  width: 80px; /* Ajusta el tamaño del logo */
+  height: auto; /* Mantiene la proporción del logo */
+  margin-left: 25%;
+}
 /* Estilo para los enlaces de la barra de navegación */
 .navbar-nav .nav-link {
-    font-weight: 600; /* Engrosar el texto */
-    font-size: 16px; /* Ajusta el tamaño de letra si lo deseas */
-    color: #484747; /* Color del texto */
-    padding-left: 21px; /* Espaciado entre los enlaces */
-    padding-right: 15px; /* Espaciado entre los enlaces */
-    transition: color 0.3s ease; /* Efecto suave al pasar el ratón */
-    font-family: 'Roboto Condensed', sans-serif; /* Usando la fuente Roboto Condensed */
-  }
-  
-  /* Estilo para el enlace activo */
-  .navbar-nav .nav-link.active {
-    color: #343434; /* Color de los enlaces activos */
-  }
-  
-  /* Efecto hover para los enlaces */
-  .navbar-nav .nav-link:hover {
-    color: #343434; /* Color de los enlaces al pasar el ratón */
-  }
-  
-  /* Estilo para los elementos del menú (li) */
-  .navbar-nav {
-    margin-left: 20px; /* Despega el menú a la derecha del logo */
-    display: flex;
-    gap: 15px; /* Espacio entre los elementos del menú */
-  }
-  
-  /* Estilo para el botón del menú en dispositivos pequeños */
-  .navbar-toggler {
-    border-color: #fff; /* Color del borde */
-  }
-  
-  /* Estilo para los iconos de los botones en móviles */
-  .navbar-toggler-icon {
-    background-color: #fff; /* Color del icono del menú */
-  }
-  
-  /* Estilo para el menú en pantallas pequeñas */
-  @media (max-width: 768px) {
-    .navbar-nav {
-      margin-left: 0; /* Elimina el margen en pantallas pequeñas */
-      flex-direction: column; /* Hace que los elementos del menú se alineen verticalmente */
-    }
-  
-    .nav-link {
-      font-size: 16px; /* Ajusta el tamaño de los enlaces en pantallas pequeñas */
-      padding: 10px 0; /* Ajusta el espaciado vertical */
-    }
-  }
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
-.titulo {
-    font-family: 'Roboto Condensed', sans-serif; /* Usando la fuente Roboto Condensed */
-    font-size: 210px; /* Tamaño grande */
-    font-weight: bold; /* Haciendo la letra negrita */
-    text-align: left; /* Alineado a la izquierda */
-    margin: 12% 0 0 9%;
+  font-weight: 600; /* Engrosar el texto */
+  font-size: 16px; /* Ajusta el tamaño de letra si lo deseas */
+  color: #484747; /* Color del texto */
+  padding-left: 21px; /* Espaciado entre los enlaces */
+  padding-right: 15px; /* Espaciado entre los enlaces */
+  transition: color 0.3s ease; /* Efecto suave al pasar el ratón */
+  font-family: "Roboto Condensed", sans-serif; /* Usando la fuente Roboto Condensed */
 }
-.subtitulo  {
-    font-family: 'Roboto Condensed', sans-serif; /* Misma tipografía */
-    font-size: 20px; /* Más pequeño que el HOLA */
-    color: #333; /* Color de texto */
-    text-align: left; /* Alineado a la izquierda */
-    margin: -2.5% 0 0 10%;
+
+/* Estilo para el enlace activo */
+.navbar-nav .nav-link.active {
+  color: #343434; /* Color de los enlaces activos */
+}
+
+/* Efecto hover para los enlaces */
+.navbar-nav .nav-link:hover {
+  color: #343434; /* Color de los enlaces al pasar el ratón */
+}
+
+/* Estilo para los elementos del menú (li) */
+.navbar-nav {
+  margin-left: 20px; /* Despega el menú a la derecha del logo */
+  display: flex;
+  gap: 15px; /* Espacio entre los elementos del menú */
+}
+
+/* Estilo para el botón del menú en dispositivos pequeños */
+.navbar-toggler {
+  border-color: #fff; /* Color del borde */
+}
+
+/* Estilo para los iconos de los botones en móviles */
+.navbar-toggler-icon {
+  background-color: #fff; /* Color del icono del menú */
+}
+
+/* Estilo para el menú en pantallas pequeñas */
+@media (max-width: 768px) {
+  .navbar-nav {
+    margin-left: 0; /* Elimina el margen en pantallas pequeñas */
+    flex-direction: column; /* Hace que los elementos del menú se alineen verticalmente */
   }
+
+  .nav-link {
+    font-size: 16px; /* Ajusta el tamaño de los enlaces en pantallas pequeñas */
+    padding: 10px 0; /* Ajusta el espaciado vertical */
+  }
+}
+/* Ajustar el contenedor del CTA al lado derecho de la pantalla */
+.cta-container {
+  position: fixed; /* Posición fija */
+  right: 20px; /* Espacio desde el borde derecho de la pantalla */
+  top: 20px; /* Espacio desde el borde inferior de la pantalla */
+  padding: 10px 15px; /* Espaciado interno */
+  font-family: "Roboto Condensed", sans-serif; /* Usando la fuente Roboto Condensed */
+  display: flex;
+  align-items: center;
+  gap: 7px; /* Espacio entre el texto y la flecha */
+  cursor: pointer;
+  font-weight: 600; /* Engrosar el texto */
+  font-size: 16px; /* Ajusta el tamaño de letra si lo deseas */
+  color: #484747; /* Color del texto */
+}
+
+.cta-container span {
+  font-size: 1rem; /* Tamaño del texto */
+  color: #343434; /* Color del texto */
+}
+
+.cta-arrow {
+  font-size: 1.5rem; /* Tamaño de la flecha */
+  color: #343434; /* Color de la flecha */
+}
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap");
+.titulo {
+  font-family: "Roboto Condensed", sans-serif; /* Usando la fuente Roboto Condensed */
+  font-size: 210px; /* Tamaño grande */
+  font-weight: bold; /* Haciendo la letra negrita */
+  text-align: left; /* Alineado a la izquierda */
+  margin: 14% 0 0 11%;
+}
+.subtitulo {
+  font-family: "Roboto Condensed", sans-serif; /* Misma tipografía */
+  font-size: 20px; /* Más pequeño que el HOLA */
+  color: #333; /* Color de texto */
+  text-align: left; /* Alineado a la izquierda */
+  margin: -1.5% 0 0 12%;
+}
+/* Estilo para la línea lateral */
+.sidebar-line {
+  position: absolute; /* Asegura que el texto INICIO se posicione correctamente dentro de este contenedor */
+  margin-top: 16%; /* Ajusta la distancia desde el borde superior de la pantalla */
+  left: 0; /* Coloca la línea en el borde izquierdo, más cerca del logo */
+  height: 70vh; /* La línea tendrá un tamaño fijo, ajustado para no ocupar toda la altura */
+  width: 2px; /* Ancho de la línea */
+  background-color: #797878; /* Color de la línea */
+  margin-left: 5%;
+  display: flex;
+  align-items: center; /* Centra verticalmente el contenido dentro de la línea */
+  justify-content: center; /* Centra horizontalmente el contenido */
+}
+
+/* Estilo del texto "INICIO" */
+.sidebar-text {
+  position: absolute; /* Hacer que el texto se posicione absolutamente dentro de .sidebar-line */
+  transform: rotate(-90deg) translateX(-50%); /* Rota el texto y lo centra horizontalmente */
+  font-size: 14px; /* Tamaño del texto */
+  font-weight: bold; /* Negrita */
+  color: #797878;
+  top: -15%; /* Ajusta la posición del texto desde el borde superior (puedes cambiar este valor) */
+}
