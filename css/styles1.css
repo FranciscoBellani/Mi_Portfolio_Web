@@ -1,17 +1,49 @@
-body {
+html, body {
   background-color: #f8f9fa !important;
   margin: 0;
   padding: 0;
+  height: 100%; /* Garantiza que el contenedor principal abarque toda la pantalla */
+  overflow: hidden; /* Elimina cualquier posibilidad de scroll */
 }
+
+
 /* Importo Fuentes */
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap");
+
+/* Ajusta el container de la navbar */
+.navbar .container {
+  margin-left: 4.5%; /* Corre el container hacia la izquierda */
+  margin-right: auto; /* Evita que se desplace hacia la derecha */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Espacio entre el logo y el CTA */
+}
+
+/* Asegura que el CTA esté siempre alineado a la derecha */
+.cta-container {
+  position: fixed; /* Ancla el elemento a la pantalla */  
+  right: 20px; /* Ancla el CTA a la derecha de la pantalla */
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  color:#797878;
+  z-index: 1000; /* Asegura que el CTA esté por encima de otros elementos */
+}
+
+.cta-container .cta-arrow {
+  margin-left: 5px; /* Espacio entre el texto y la flecha */
+}
+
 
 /* Contenedor principal que ocupa el ancho total */
 .full-width-section {
   display: grid;
-  grid-template-columns: 1fr 3fr 3fr; /* Ajusta la proporción entre las columnas */
-  height: 100vh; /* Ocupa toda la altura visible */
+  grid-template-columns: 1fr 2fr 4fr; /* Ajusta la proporción entre las columnas */
+  min-height: 100vh; /* Asegura que el contenedor ocupe toda la altura visible */
   width: 100%; /* Ocupa el ancho completo de la pantalla */
+  margin: 0; /* Elimina márgenes */
+  padding: 0; /* Elimina paddings */
 }
 
 /* Sidebar Column */
@@ -50,14 +82,14 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 2px; /* Espaciado interno */
-}
+  }
 
 .text-column h1 {
   font-family: "Roboto Condensed", sans-serif;
   font-size: 250px;
   font-weight: bold;
   text-align: left;
+  line-height: 0.9; /* Reduce el espacio vertical */  
 }
 
 .text-column h2 {
@@ -65,26 +97,36 @@ body {
     font-size: 25px;
     font-weight: lighter;
     text-align: left;
+    line-height: 1.2; /* Espaciado ajustado entre líneas */
+    margin-left: 10px;
 }
 
 /* Columna de la imagen */
 .photo-column {
   display: flex;
-  justify-content:flex-start;
-  align-items: flex-start;
+  justify-content: center; /* Centra la imagen horizontalmente */
+  align-items:flex-start; /* Centra la imagen verticalmente */
+  height: 100vh; /* Asegura que la columna ocupe toda la altura de la pantalla */
+  width: 100%; /* Ocupa todo el ancho de la pantalla */
 }
 
 .photo-column img {
-    width: 100%; /* La imagen ocupará todo el ancho disponible */
-    height: 100vh; /* La imagen ocupará toda la altura visible de la pantalla */
-    object-fit: cover; /* La imagen se ajustará para cubrir todo el área sin deformarse */
-    border-radius: 8px; /* Redondeo opcional */
+  width: 115%; /* La imagen ocupará un 110% del ancho del contenedor, haciéndola más grande */
+  height: auto; /* La altura se ajusta automáticamente manteniendo la proporción */
+  object-fit:cover; /* Ajusta la imagen sin que se corte, manteniendo la proporción */
+  border-radius: 8px; /* Redondeo opcional */
   }
 
 .navbar .logo {
   width: 70px; /* Ajusta el tamaño del logo según sea necesario */
-  height: auto;
+  position: relative;
 }
 
 
 
+/* Responsive ajuste para el margin */
+@media (max-width: 768px) {
+  .navbar .container {
+    margin-left: 5%; /* Reduce el margen en pantallas pequeñas */
+  }
+}
