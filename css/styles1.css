@@ -39,7 +39,7 @@ html, body {
 /* Contenedor principal que ocupa el ancho total */
 .full-width-section {
   display: grid;
-  grid-template-columns: 1fr 2fr 4fr; /* Ajusta la proporción entre las columnas */
+  grid-template-columns: 1fr 3fr 3fr; /* Ajusta la proporción entre las columnas */
   min-height: 100vh; /* Asegura que el contenedor ocupe toda la altura visible */
   width: 100%; /* Ocupa el ancho completo de la pantalla */
   margin: 0; /* Elimina márgenes */
@@ -62,7 +62,7 @@ html, body {
   position: relative;
   font-size: 14px;
   font-weight: bold;
-  color: #797878;
+  color: #c2c2c2;
   transform: rotate(-90deg);
   transform-origin: center;
   margin-bottom: 20%;
@@ -71,7 +71,7 @@ html, body {
 /* Sidebar Line */
 .sidebar-line {
   width: 2px;
-  background-color: #797878;
+  background-color: #c2c2c2;
   height: 70%;
   position: relative;
 }
@@ -87,7 +87,7 @@ html, body {
 
 .text-column h1 {
   font-family: "Roboto Condensed", sans-serif;
-  font-size: 230px;
+  font-size: 210px;
   font-weight: bold;
   text-align: left;
   line-height: 0.9; /* Reduce el espacio vertical */  
@@ -104,18 +104,21 @@ html, body {
 
 /* Columna de la imagen */
 .photo-column {
-  display: flex;
-  justify-content: center; /* Centra la imagen horizontalmente */
-  align-items:flex-start; /* Centra la imagen verticalmente */
-  height: 100vh; /* Asegura que la columna ocupe toda la altura de la pantalla */
-  width: 100%; /* Ocupa todo el ancho de la pantalla */
+  display: flex; /* Asegura alineación flexible */
+  justify-content: left; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 100vh; /* Ocupa toda la altura del viewport */
+  width: 100%; /* Ancho completo */
+  padding: 0; /* Sin padding */
+  margin: 0; /* Sin márgenes */
+  overflow: hidden; /* Evita cortes innecesarios */
 }
 
 .photo-column img {
-  width: 115%; /* La imagen ocupará un 110% del ancho del contenedor, haciéndola más grande */
-  height: auto; /* La altura se ajusta automáticamente manteniendo la proporción */
-  object-fit:cover; /* Ajusta la imagen sin que se corte, manteniendo la proporción */
-  border-radius: 8px; /* Redondeo opcional */
+  height: 100%; /* Asegura que la imagen ocupe toda la altura */
+  width: auto; /* Mantiene la proporción sin deformarse */
+  object-fit: contain; /* Evita cortes */
+  border-radius: 8px; /* Opcional: bordes redondeados */
   }
 
 .navbar .logo {
@@ -137,7 +140,7 @@ html, body {
 .texto_movimiento {
   font-family: "Roboto Condensed", sans-serif;
   font-weight: 550;
-  font-size: 30px;
+  font-size: 25px;
   position: relative;
   width: 450px;  
   margin-left: 10px;
@@ -195,4 +198,43 @@ html, body {
 
 .texto_movimiento .midnight {
   color: #2c3e50;
+}
+
+
+/* Estilo para la sección de Tecnologías */
+.Tecnologias {
+  margin-top: -10px; /* Ajusta el margen superior según lo necesario */
+  text-align:start; /* Centra el texto horizontalmente */
+  margin-left: 1%;
+}
+
+/* Estilo para HTML | CSS | JavaScript */
+.Tecnologias p:first-child {
+  font-weight: 500px; /* Aplica negrita */
+  font-size: 2rem; /* Ajusta el tamaño al del h1 */
+  line-height: 1.1; /* Espaciado entre líneas para que no sea muy grande */
+  margin-bottom: 3px; /* Reduce el espacio debajo */
+  
+}
+
+/* Estilo para el subtítulo */
+.Tecnologias p:nth-child(2) {
+  font-size: 1rem; /* Tamaño más pequeño para el subtítulo */
+  color: #555; /* Un tono ligeramente más suave para diferenciarlo */
+  line-height: 1.2; /* Ajusta el espaciado entre líneas */
+  margin-top: 0; /* Quita margen superior */
+}
+
+.text-column .Tecnologias {
+  margin-bottom: 30px;
+  position: relative; /* Permite ajustes precisos */
+  top: -10%; /* Ajusta la altura al nivel de "INICIO" */
+}
+/* Ajustes específicos para pantallas más grandes */
+@media (min-width: 1024px) {
+  .text-column .Tecnologias {
+    line-height: 3.5;
+     margin-top: -20px; /* Desplaza hacia arriba el bloque de texto */
+  } 
+  
 }
