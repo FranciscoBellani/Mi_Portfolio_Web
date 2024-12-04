@@ -7,44 +7,111 @@ html, body {
 }
 
 
-/* Importo Fuentes */
+/* Importo Fuente */
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap");
 
-/* Ajusta el container de la navbar */
+/* Menu */
+
+.navbar .logo {
+  width: 70px; /* Ajusta el tamaño del logo según sea necesario */
+  position: relative;
+}
+/* Contenedor principal */
 .navbar .container {
-  margin-left: 4.5%; /* Corre el container hacia la izquierda */
-  margin-right: auto; /* Evita que se desplace hacia la derecha */
+  margin-left: 4.5%;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Espacio entre el logo y el CTA */
+  justify-content: space-between;
 }
 
-/* Asegura que el CTA esté siempre alineado a la derecha */
+/* Estilos del CTA */
 .cta-container {
-  position: fixed; /* Ancla el elemento a la pantalla */  
-  right: 20px; /* Ancla el CTA a la derecha de la pantalla */
+  position: fixed;
+  right: 20px;
   display: flex;
   align-items: center;
   font-size: 16px;
   font-weight: bold;
-  color:#797878;
-  z-index: 1000; /* Asegura que el CTA esté por encima de otros elementos */
+  color: #797878 !important;
+  z-index: 1000;
 }
 
 .cta-container .cta-arrow {
-  margin-left: 5px; /* Espacio entre el texto y la flecha */
-  color:#797878;
+  margin-left: 5px;
+  color: inherit;
 }
 
+/* Estilos del menú */
+.navbar .nav-link {
+  position: relative;
+  padding: 0.5rem;
+  color: #797878;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
 
-/* Contenedor principal que ocupa el ancho total */
+.navbar .nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  height: 0;
+  background-color: #c2c2c2;
+  transition: height 0.5s ease-in-out;
+}
+
+.navbar .nav-link:hover::before {
+  height: 90%;
+}
+
+.navbar .nav-link.active {
+  color: #000;
+}
+
+.navbar .nav-item {
+  margin-right: 1rem;
+}
+.navbar .cta-container .cta-arrow {
+  color: #797878 !important; 
+}
+
+/* Contenedor principal */
 .full-width-section {
   display: grid;
-  grid-template-columns: 1fr 3fr 3fr; /* Ajusta la proporción entre las columnas */
-  min-height: 80vh; /* Asegura que el contenedor ocupe toda la altura visible */
-  width: 100%; /* Ocupa el ancho completo de la pantalla */
-  margin: 0; /* Elimina márgenes */
-  padding: 0; /* Elimina paddings */
+  grid-template-columns: 1fr 3fr 3fr; /* Proporción entre columnas */
+  min-height: 80vh; /* Altura mínima */
+  width: 100%; /* Ancho completo */
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos comunes de texto */
+.text-column, .sidebar-text {
+  font-family: "Roboto Condensed", sans-serif;
+  text-align: left;
+}
+
+.text-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-right: 10px;
+}
+
+.text-column h1 {
+  font-size: 210px;
+  font-weight: bold;
+  line-height: 0.9;
+}
+
+.text-column h2 {
+  font-size: 25px;
+  font-weight: lighter;
+  line-height: 1.2;
+  margin-left: 10px;
 }
 
 /* Sidebar Column */
@@ -53,14 +120,11 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
-  background-color: #f8f9fa; /* Color de fondo opcional */
+  background-color: #f8f9fa; /* Fondo opcional */
   margin-top: 15%;
 }
 
-/* Sidebar Text */
 .sidebar-text {
-  position: relative;
   font-size: 14px;
   font-weight: bold;
   color: #c2c2c2;
@@ -72,61 +136,26 @@ html, body {
 /* Sidebar Line */
 .sidebar-line {
   width: 2px;
-  background-color: #c2c2c2;
   height: 70%;
-  position: relative;
-}
-
-/* Texto de la columna central */
-.text-column {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  margin-right: 10px;
-  }
-
-.text-column h1 {
-  font-family: "Roboto Condensed", sans-serif;
-  font-size: 210px;
-  font-weight: bold;
-  text-align: left;
-  line-height: 0.9; /* Reduce el espacio vertical */  
-}
-
-.text-column h2 {
-    font-family: "Roboto Condensed", sans-serif;
-    font-size: 25px;
-    font-weight: lighter;
-    text-align: left;
-    line-height: 1.2; /* Espaciado ajustado entre líneas */
-    margin-left: 10px;
+  background-color: #c2c2c2;
 }
 
 /* Columna de la imagen */
 .photo-column {
-  display: flex; /* Asegura alineación flexible */
-  justify-content: left; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
-  height: 85vh; /* Ocupa toda la altura del viewport */
-  width: 100%; /* Ancho completo */
-  padding: 0; /* Sin padding */
-  margin: 0; /* Sin márgenes */
-  overflow: hidden; /* Evita cortes innecesarios */
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 85vh; /* Altura proporcional */
+  width: 100%;
+  overflow: hidden; /* Evita cortes */
 }
 
 .photo-column img {
-  height: 100%; /* Asegura que la imagen ocupe toda la altura */
-  width: auto; /* Mantiene la proporción sin deformarse */
-  object-fit: contain; /* Evita cortes */
-  border-radius: 8px; /* Opcional: bordes redondeados */
-  }
-
-.navbar .logo {
-  width: 70px; /* Ajusta el tamaño del logo según sea necesario */
-  position: relative;
+  height: 100%;
+  width: auto; /* Mantiene proporciones */
+  object-fit: contain;
+  border-radius: 8px; /* Bordes redondeados opcionales */
 }
-
 
 
 /* Responsive ajuste para el margin */
@@ -135,8 +164,6 @@ html, body {
     margin-left: 5%; /* Reduce el margen en pantallas pequeñas */
   }
 }
-
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:600);
 
 .texto_movimiento {
   font-family: "Roboto Condensed", sans-serif;
@@ -162,7 +189,6 @@ html, body {
 .texto_movimiento .letter {
   display: inline-block;
   position: relative;
-  float: left;
   transform: translateZ(25px);
   transform-origin: 50% 50% 25px;
 }
@@ -204,34 +230,33 @@ html, body {
 
 /* Estilo para la sección de Tecnologías */
 .Tecnologias {
-  margin-top: -10px; /* Ajusta el margen superior según lo necesario */
-  text-align:start; /* Centra el texto horizontalmente */
   margin-left: 1%;
-}
-
-/* Estilo para HTML | CSS | JavaScript */
-.Tecnologias p:first-child {
-  font-weight: 500px; /* Aplica negrita */
-  font-size: 2rem; /* Ajusta el tamaño al del h1 */
-  line-height: 1.1; /* Espaciado entre líneas para que no sea muy grande */
-  margin-bottom: 3px; /* Reduce el espacio debajo */
-  
-}
-
-/* Estilo para el subtítulo */
-.Tecnologias p:nth-child(2) {
-  font-size: 1rem; /* Tamaño más pequeño para el subtítulo */
-  color: #555; /* Un tono ligeramente más suave para diferenciarlo */
-  line-height: 1.2; /* Ajusta el espaciado entre líneas */
-  margin-top: 0; /* Quita margen superior */
-  font-family: "Roboto Condensed", sans-serif;
-}
-
-.text-column .Tecnologias {
-  margin-bottom: 30px;
+  text-align: start;
+  margin-bottom: 30px; /* Unificamos el margen inferior aquí */
   position: relative; /* Permite ajustes precisos */
-  top: -10%; /* Ajusta la altura al nivel de "INICIO" */
+  top: -10%; /* Ajuste de altura */
 }
+
+/* Estilo general para los párrafos dentro de Tecnologías */
+.Tecnologias p {
+  margin: 0 0 3px 0; /* Reduce márgenes para simplificar */
+  line-height: 1.1; /* Espaciado entre líneas */
+}
+
+/* Estilo para el primer párrafo (Título) */
+.Tecnologias p:first-child {
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+/* Estilo para el segundo párrafo (Subtítulo) */
+.Tecnologias p:nth-child(2) {
+  font-size: 1rem;
+  color: #555;
+  font-family: "Roboto Condensed", sans-serif;
+  line-height: 1.2;
+}
+
 
 /* Ajustes específicos para pantallas más grandes */
 @media (min-width: 1024px) {
@@ -241,57 +266,56 @@ html, body {
   } 
   
 }
-/* Nueva sección */
+/* Sección Nueva */
 .new-section {
   font-family: "Roboto Condensed", sans-serif;
   display: grid;
-  grid-template-columns: 2fr 1fr 2fr; /* Distribución de columnas */
-  gap: 20px; /* Espaciado entre columnas */
-  padding: 20px;  
+  grid-template-columns: 2fr 1fr 2fr;
+  gap: 20px;
+  padding: 20px;
   margin-top: 20px;
 }
 
-.new-section .column {
-
+/* Columnas */
+.new-section .column,
+.new-section .column1 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   text-align: left;
-  margin-left: 20%;
   padding: 5%;
-}
-.new-section .column1 {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  text-align: left;  
-  padding: 5%;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra opcional */
 }
 
+/* Añadir margen izquierdo solo para la columna */
+.new-section .column {
+  margin-left: 15%; /* Ajuste del margen izquierdo */
+}
+
+/* Sombra opcional solo para la columna1 */
+.new-section .column1 {
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Mantener el margen de la última columna */
 .new-section .column:last-child {
-  margin-left: -2px; /* Ajusta esta propiedad para moverla más a la izquierda */
+  margin-left: -2px;
   margin-right: 14%;
+}
+
+/* Estilo de texto (generalizado para h2 y p) */
+.new-section h2, .new-section p, .new-section ul li {
+  margin-bottom: 10px;
 }
 
 .new-section h2 {
   font-size: 2rem;
   color: #333;
-  margin-bottom: 10px;
 }
 
 .new-section p {
   font-size: 1rem;
   color: #555;
-  margin-bottom: 15px;
-}
-
-.new-section img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
 }
 
 .new-section ul {
@@ -299,71 +323,62 @@ html, body {
   padding: 0;
 }
 
-.new-section ul li {
-  font-size: 1rem;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-}
-
-.new-section ul li i {
+/* Estilo para los íconos de las listas */
+.new-section ul li i,
+.new-section .fas {
   margin-right: 10px;
   color: #555;
   font-size: 1.2rem;
 }
 
-/* Estilo para el ícono */
-.new-section .fas {
-  font-size: 1.5rem;
-  color: #7b7b7b;
-  margin-bottom: 10px;
+/* Estilo para las imágenes */
+.new-section img,
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
 }
 
-/* Responsividad */
-@media (max-width: 768px) {
-  .new-section {
-    grid-template-columns: 1fr; /* Una columna para pantallas pequeñas */
-  }
-  .new-section .column {
-    align-items: center;
-    text-align: center;
-  }
-  .new-section img {
-    width: 80%;
-  }
-}
-.image-container img {
-  width: 100%; /* Ajusta según necesites */
-  filter: grayscale(100%); /* Blanco y negro */
-  transition: filter 0.5s ease-in-out; /* Transición suave */
+.new-section img {
   margin-bottom: 4%;
 }
 
-.image-container img:hover {
-  filter: grayscale(0%); /* Recupera el color */
+/* Imagen en escala de grises con hover */
+.image-container img {
+  filter: grayscale(100%);
+  transition: filter 0.5s ease-in-out;
 }
 
+.image-container img:hover {
+  filter: grayscale(0%);
+}
+
+/* Sección CTA */
 .cta-section {
-  background-color: #f4f4f4; /* Color de fondo suave */
+  background-color: #f4f4f4;
   text-align: center;
   padding: 50px 20px;
 }
 
-.cta-section h1 {
+.cta-section h1,
+.cta-section p {
   font-family: "Roboto Condensed", sans-serif;
-  font-size: 2.5rem;
   color: #333;
+}
+
+.cta-section h1 {
+  font-size: 2.5rem;
   margin-bottom: 20px;
 }
 
 .cta-section p {
-  font-family: "Roboto Condensed", sans-serif;
   font-size: 1.2rem;
   color: #555;
   margin-bottom: 30px;
 }
 
-.cta-section .cta-button {
+/* Botón CTA */
+.cta-button {
   display: inline-block;
   background-color: #222;
   color: #fff;
@@ -374,10 +389,11 @@ html, body {
   transition: background-color 0.3s ease;
 }
 
-.cta-section .cta-button:hover {
-  background-color: #555; /* Color más oscuro al hacer hover */
+.cta-button:hover {
+  background-color: #555;
 }
 
+/* Estilo del footer */
 .footer {
   background-color: #222;
   color: #fff;
@@ -387,6 +403,7 @@ html, body {
   align-items: center;
 }
 
+/* Estilo de las listas de enlaces */
 .footer-left ul {
   list-style: none;
   margin: 0;
@@ -395,33 +412,30 @@ html, body {
   gap: 20px;
 }
 
-.footer-left ul li a {
+.footer-left ul li a,
+.footer .social-icons a {
   color: #fff;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.footer-left ul li a:hover {
-  color: #007BFF; /* Color del enlace al hacer hover */
+.footer-left ul li a:hover,
+.footer .social-icons a:hover {
+  color: #007BFF; /* Color de enlace al hacer hover */
 }
 
+/* Estilo de los íconos sociales */
 .footer .social-icons {
   display: flex;
   gap: 15px;
-  margin-bottom: 10px; /* Espacio entre íconos y el texto del copyright */
+  margin-bottom: 10px;
 }
 
 .footer .social-icons a {
-  color: #fff;
   font-size: 1.5rem; /* Tamaño de los íconos */
-  text-decoration: none;
-  transition: color 0.3s ease;
 }
 
-.footer .social-icons a:hover {
-  color: #007BFF; /* Color al hacer hover */
-}
-
+/* Estilo del botón */
 #container-button {
   display: flex;
   justify-content: center;
@@ -448,28 +462,27 @@ button.learn-more {
 button.learn-more .circle {
   position: relative;
   display: block;
-  margin: 0;
   width: 3rem;
   height: 3rem;
   background: #282936;
   border-radius: 1.625rem;
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: width 0.45s cubic-bezier(0.65, 0, 0.076, 1);
 }
 
 button.learn-more .circle .icon {
   position: absolute;
   top: 0;
   bottom: 0;
-  margin: auto;
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-}
-
-button.learn-more .circle .icon.arrow {
   left: 0.625rem;
+  margin: auto;
   width: 1.125rem;
   height: 0.125rem;
   background: none;
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: transform 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+}
+
+button.learn-more .circle .icon.arrow {
+  background: none;
 }
 
 button.learn-more .circle .icon.arrow::before {
@@ -497,12 +510,12 @@ button.learn-more .button-text {
   line-height: 1.6;
   text-align: center;
   text-transform: uppercase;
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: color 0.45s cubic-bezier(0.65, 0, 0.076, 1);
 }
 
+/* Transiciones en hover */
 button.learn-more:hover .circle {
   width: 100%;
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
 }
 
 button.learn-more:hover .circle .icon.arrow {
@@ -512,4 +525,18 @@ button.learn-more:hover .circle .icon.arrow {
 
 button.learn-more:hover .button-text {
   color: #fff;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .new-section {
+    grid-template-columns: 1fr; /* Una columna para pantallas pequeñas */
+  }
+  .new-section .column {
+    align-items: center;
+    text-align: center;
+  }
+  .new-section img {
+    width: 80%;
+  }
 }
