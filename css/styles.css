@@ -623,49 +623,77 @@ button.learn-more:hover .button-text {
 /* Estilo del contenedor de la cuadrícula */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adaptable a 2 columnas */
-  gap: 20px; /* Espaciado entre elementos */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas flexibles */
+  gap: 30px; /* Mayor espacio entre elementos */
   padding: 20px;
+  margin: 0 10%; /* Márgenes izquierdo y derecho */
+  border-radius: 10px; /* Bordes redondeados */
 }
 
-/* Estilo de cada servicio */
 .service-item {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Alineado a la izquierda */
-  background-color: #f9f9f9;
-  padding: 20px;
+  background-color: #ffffff;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  padding: 20px;
+  transition: transform 0.3s ease;
+  aspect-ratio: 1; /* Hace que los elementos sean más cuadrados */  
+  text-align: center; /* Centra el contenido */
 }
 
 .service-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Icono del servicio */
-.service-icon {
-  font-size: 2rem;
-  color: #007bff;
-  margin-bottom: 10px;
+
+.service-item h3 { 
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 1.4rem;
+  font-style:normal;
+  margin-bottom: 15px; /* Espaciado inferior */  
+
+}
+p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+.service-imagen {
+  display: block;
+  width: 100%; /* Asegura que ocupe el ancho total del contenedor */
+  max-width: 300px; /* Limita el tamaño máximo si es necesario */
+  margin: 0 auto 25px auto; /* Centra horizontalmente y agrega margen inferior */
+  overflow: hidden; /* Oculta desbordes de la imagen */
+  border-radius: 8px; /* Esquinas redondeadas (opcional) */
+  transition: transform 0.3s ease;
 }
 
-/* Título del servicio */
-.service-item h3 {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.3rem;
-  color: #333;
-  margin-bottom: 10px;
+.service-imagen img {
+  display: block;
+  width: 100%;
+  height: auto; /* Mantiene la proporción de la imagen */
+  object-fit: cover; /* Ajusta la imagen dentro del contenedor */
+  filter: grayscale(100%); /* Efecto blanco y negro inicial */
+  transition: filter 0.3s ease; /* Animación suave para el cambio de color */
 }
 
-/* Descripción */
-.service-item p {
-  font-size: 1rem;
-  color: #666;
-  margin-bottom: 15px;
-  line-height: 1.6;
+.service-item:hover .service-imagen {
+  transform: scale(1.05); /* Amplía ligeramente la imagen en hover */
+}
+
+.service-item:hover .service-imagen img {
+  filter: grayscale(0); /* Cambia a color en hover */
+}
+
+.service-item p {  
+  font-size: 0.9rem;
+  line-height: 1.4; /* Aumenta la separación entre líneas */
+  letter-spacing: 0.2px; /* Da un pequeño espaciado entre letras */
+  margin: 10px 0; /* Espaciado superior e inferior */
+  color: #777
 }
 
 
