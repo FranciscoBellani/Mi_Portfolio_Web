@@ -39,10 +39,12 @@
               <a class="nav-link" href="Index.html">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="#">Servicios</a>
+              <a class="nav-link" href="servicios.html">Servicios</a>
             </li>
             <li class="nav-item"><a class="nav-link" href="#">Proyectos</a></li>
-            <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Contacto</a>
+            </li>
           </ul>
           <div class="cta-container">
             <span>¿Hablamos?</span>
@@ -57,73 +59,105 @@
         <!-- Breadcrumb -->
         <div class="breadcrumb">
           <span class="bullet">&#8226;</span>
-          <span>Servicios</span>
+          <span>Contacto</span>
         </div>
 
         <div class="servicios">
-          <h2>Diseño Web Creativo y Funcional: Tu Visión, Nuestra Creación</h2>
+          <h2>Pon en marcha tu proyecto: programa tu sesión de diseño</h2>
           <p>
-            Soluciones web innovadoras y personalizadas para potenciar tu
-            presencia y alcanzar tus objetivos digitales.
+            Convierte tu idea en una realidad visual. Completa el formulario de
+            contacto y comencemos a trabajar juntos en tu proyecto ¡Estoy listo
+            para crear contigo!
           </p>
         </div>
       </div>
     </main>
-    <div class="services-grid">
-      <!-- Item 1 -->
-      <div class="service-item">
-        <div class="service-imagen">
+    <div class="form-container">
+      <!-- Columna 1: Título e imagen -->
+      <div class="image-title-container">
+        <div class="image-container">
           <img
-            src="images/paginas-web-estaticas.png"
-            alt="imagen de paginas web estaticas"
+            src="images/contacto_diseño_web.jpg"
+            alt="Descripción de la imagen"
+            class="hover-image"
           />
         </div>
-        <h3>Paginas Web Estaticas</h3>
-        <p>
-          Creamos páginas web rápidas y optimizadas, ideales para mostrar
-          información clave con diseños modernos y profesionales.
-        </p>
       </div>
-      <!-- Repetir los demás items -->
-      <div class="service-item">
-        <div class="service-imagen">
-          <img
-            src="images/sitios-web-autoadministrables-wordpress.png"
-            alt="imagen de paginas web estaticas"
-          />
-        </div>
-        <h3>Diseño Web Autogestionable</h3>
-        <p>
-          Diseñamos sitios web con WordPress, permitiéndote gestionar contenido
-          fácilmente y mantener tu página siempre actualizada.
-        </p>
-      </div>
-      <div class="service-item">
-        <div class="service-imagen">
-          <img
-            src="images/posicionamiento-web,-seo-web.png"
-            alt="imagen de posicionamiento web"
-          />
-        </div>
-        <h3>Posicionamiento Web - SEO</h3>
-        <p>
-          Optimizamos tu sitio para motores de búsqueda, mejorando tu
-          visibilidad y atrayendo más tráfico orgánico de calidad.
-        </p>
 
-        <!-- Agregar más items hasta completar -->
-      </div>
-      <div class="service-item">
-        <div class="service-imagen">
-          <img src="images/UX--UI.png" alt="imagen de posicionamiento web" />
-        </div>
-        <h3>UX - UI</h3>
-        <p>
-          Diseños centrados en el usuario, ofreciendo experiencias intuitivas y
-          visualmente atractivas que maximizan la interacción.
-        </p>
+      <!-- Columna 2: Formulario de contacto -->
+      <div class="form-column">
+        <form class="contact-form" action="#" method="post">
+          <!-- Fila 1: Nombre y Apellido -->
+          <div class="row two-columns">
+            <div class="column small">
+              <label for="firstName">Nombre</label>
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                placeholder="Ingresa tu nombre"
+                required
+              />
+            </div>
+            <div class="column large">
+              <label for="lastName">Apellido</label>
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                placeholder="Ingresa tu apellido"
+                required
+              />
+            </div>
+          </div>
 
-        <!-- Agregar más items hasta completar -->
+          <!-- Fila 2: Email -->
+          <div class="row">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Ingresa tu correo electrónico"
+              required
+            />
+          </div>
+
+          <!-- Fila 3: Teléfono -->
+          <div class="row">
+            <label for="phone">Teléfono</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Ingresa tu número de teléfono"
+            />
+          </div>
+
+          <!-- Fila 4: Mensaje -->
+          <div class="row">
+            <label for="message">Mensaje</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              placeholder="Escribe tu mensaje aquí"
+            ></textarea>
+          </div>
+
+          <!-- Fila 5: Aceptación de términos -->
+          <div class="row terms">
+            <label>
+              <input type="checkbox" name="terms" required /> Acepto los
+              términos y políticas de privacidad
+            </label>
+          </div>
+
+          <!-- Fila 6: Botón de envío -->
+          <div class="row">
+            <button type="submit">Hacer una reserva</button>
+          </div>
+        </form>
       </div>
     </div>
 
@@ -140,15 +174,16 @@
       <h3>Transforma tu visión en realidad</h3>
       <h3>¡Haz que tu proyecto digital cobre vida hoy mismo!</h3>
       <p>
-        Tus ideas merecen resultados que impacten. Estoy aquí para lograrlos.</p>
-        <div id="container-button-servicios">
-          <button class="learn-more-servicios">
-            <span class="circle" aria-hidden="true">
-              <span class="icon arrow"></span>
-            </span>
-            <span class="button-text">Trabajamos juntos?</span>
-          </button>
-        </div>  
+        Tus ideas merecen resultados que impacten. Estoy aquí para lograrlos.
+      </p>
+      <div id="container-button-servicios">
+        <button class="learn-more-servicios">
+          <span class="circle" aria-hidden="true">
+            <span class="icon arrow"></span>
+          </span>
+          <span class="button-text">Trabajamos juntos?</span>
+        </button>
+      </div>
     </section>
 
     <footer class="footer">
