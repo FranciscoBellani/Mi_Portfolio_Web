@@ -382,7 +382,8 @@ html, body {
   font-size: 1rem;
   line-height: 1.6;
   color: #555;
-  margin: 0;
+  margin-top: 10%;
+  
 }
 .third-row {
   display: grid;
@@ -964,4 +965,171 @@ button.learn-more-servicios:hover .circle .icon.arrow::before {
 
 p + #container-button-servicios {
   margin-top: 30px; /* Agrega un margen superior solo al contenedor del botón */
+}
+
+/* Contenedor común para el formulario y la imagen/título */
+.form-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Dos columnas: una más ancha para el formulario */
+  gap: 20px; /* Espacio entre las columnas */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Columna de la imagen y el título */
+.image-title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra verticalmente */
+  align-items: flex-start; /* Alinea al margen izquierdo */
+  padding: 20px;
+  height: 100%; /* Asegura que ocupe toda la altura disponible */
+}
+
+.image-title {
+  font-size: 1.5rem;
+  color: #333;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.image-container {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+.hover-image {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.hover-image:hover {
+  transform: scale(1.05); /* Efecto de zoom en hover */
+}
+
+/* Columna del formulario */
+.form-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea todos los elementos a la izquierda */
+  gap: 15px; /* Espaciado entre los elementos */
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form .row {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Para que los inputs ocupen todo el ancho disponible */
+  align-items: flex-start; /* Alinea todos los elementos dentro de la fila a la izquierda */
+  margin-bottom: 15px;
+  
+}
+
+.contact-form .row.two-columns {
+  display: flex; /* Usamos flexbox */
+  flex-direction: row; /* Alineamos las columnas horizontalmente */
+  gap: 15px; /* Espacio entre las columnas */
+  align-items: flex-start; /* Alineamos los elementos en el eje vertical al principio */
+  width: 100%; /* Nos aseguramos de que la fila ocupe el ancho completo */  
+}
+
+/* Estilos para las columnas dentro de la fila */
+.contact-form .row.two-columns .column {
+  flex: 1; /* Hace que ambas columnas ocupen el mismo ancho */
+  box-sizing: border-box; /* Para asegurarnos de que el padding y border no afecten el ancho */
+  margin-left: -2%;
+}
+
+.contact-form .column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.contact-form .column.small {
+  flex: 1;
+}
+
+.contact-form .column.large {
+  flex: 1;
+}
+
+.contact-form label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #333;
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+/* Asegurarse de que los inputs y textareas estén alineados a la izquierda */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+  text-align: left; /* Alineación a la izquierda en inputs y textarea */
+}
+
+.contact-form input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #4a4d50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .form-container {
+    grid-template-columns: 1fr; /* Coloca las columnas una debajo de la otra */
+  }
+
+  .image-title-container {
+    text-align: center;
+  }
+
+  .form-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alineamos todos los elementos a la izquierda */
+    gap: 15px; /* Espaciado entre los elementos */
+    width: 100%;
+  }
+}
+.contact-form .terms input[type="checkbox"] {
+  width: 20px; /* Ajusta el tamaño del checkbox */
+  height: 20px; /* Ajusta la altura del checkbox */
+  margin: 0; /* Elimina el margen extra */
+  padding: 0; /* Elimina cualquier relleno extra */
+  vertical-align: middle; /* Alinea el checkbox verticalmente */
 }
