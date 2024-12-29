@@ -150,7 +150,7 @@ body {
   display: flex;
   justify-content: left;
   align-items: center;
-  height: 85vh; /* Altura proporcional */
+  height: 90vh; /* Altura proporcional */
   width: 100%;
   overflow: hidden; /* Evita cortes */
 }
