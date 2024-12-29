@@ -3,47 +3,20 @@ body {
   background-color: #f8f9fa !important;
   margin: 0;
   padding: 0;
-  height: 100%; /* Garantiza que el contenedor principal abarque toda la pantalla */
-  overflow: auto; /* Elimina cualquier posibilidad de scroll */
+  height: 100%;
+  overflow: auto;
+  font-family: "Roboto Condensed", sans-serif;
 }
-
-/* Importo Fuente */
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap");
-
-/* Menu */
-
-.navbar .logo {
-  width: 70px; /* Ajusta el tamaño del logo según sea necesario */
-  position: relative;
-}
-/* Contenedor principal */
+/* Menu Contenedor principal */
 .navbar .container {
   margin-left: 4.5%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
-/* Estilos del CTA */
-.cta-container {
-  position: fixed;
-  right: 20px;
-  display: flex;
-  align-items: center;
-  font-size: 16px;
-  font-weight: bold;
-  color: #797878 !important;
-  z-index: 1000;
-}
-
-
-.cta-container p {
-  margin: 0 25px 3px 0; 
-  font-size: 1.1rem;
-  color: #555;
-  font-family: "Roboto Condensed", sans-serif;
-  line-height: 1.2;
-  font-weight: 600;
+.navbar .logo {
+  width: 70px; /* Ajusta el tamaño del logo según sea necesario */
+  position: relative;
 }
 
 /* Estilos del menú */
@@ -79,6 +52,26 @@ body {
   margin-right: 1rem;
 }
 
+/* Estilos del CTA */
+.cta-container {
+  position: fixed;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #797878 !important;
+  z-index: 1000;
+}
+
+.cta-container p {
+  margin: 0 25px 3px 0;
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
 /* Contenedor principal */
 .full-width-section {
   display: grid;
@@ -92,19 +85,28 @@ body {
 /* Estilos comunes de texto */
 .text-column,
 .sidebar-text {
-  font-family: "Roboto Condensed", sans-serif;
   text-align: left;
 }
 
-.text-column {
+.text-column,
+.sidebar-column,
+.text-column-servicios,
+.servicios,
+.image-title-container,
+.form-column,
+.contact-form,
+.contact-form .row,
+.contact-form .column,
+.row.one-column {
   display: flex;
   flex-direction: column;
+}
+.text-column {
   justify-content: center;
   align-items: flex-start;
   margin-right: 10px;
   margin-top: 7%;
 }
-
 .text-column h1 {
   font-size: 210px;
   font-weight: bold;
@@ -119,12 +121,10 @@ body {
   margin-left: 10px;
 }
 
-/* Sidebar Column */
+/* Columna Lateral */
 .sidebar-column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;  
   background-color: #f8f9fa; /* Fondo opcional */
   margin-top: 15%;
 }
@@ -138,7 +138,7 @@ body {
   margin-bottom: 20%;
 }
 
-/* Sidebar Line */
+/* Linea Lateral */
 .sidebar-line {
   width: 2px;
   height: 70%;
@@ -162,15 +162,7 @@ body {
   border-radius: 8px; /* Bordes redondeados opcionales */
 }
 
-/* Responsive ajuste para el margin */
-@media (max-width: 768px) {
-  .navbar .container {
-    margin-left: 5%; /* Reduce el margen en pantallas pequeñas */
-  }
-}
-
 .texto_movimiento {
-  font-family: "Roboto Condensed", sans-serif;
   font-weight: 550;
   font-size: 30px;
   position: relative;
@@ -236,7 +228,6 @@ body {
   margin-left: 1%;
   text-align: start;
   margin-bottom: 10px; /* Unificamos el margen inferior aquí */
-  
 }
 
 /* Estilo general para los párrafos dentro de Tecnologías */
@@ -254,8 +245,7 @@ body {
 /* Estilo para el segundo párrafo (Subtítulo) */
 .Tecnologias p:nth-child(2) {
   font-size: 1rem;
-  color: #555;
-  font-family: "Roboto Condensed", sans-serif;
+  color: #797878;
   line-height: 1.2;
 }
 
@@ -263,16 +253,12 @@ body {
 .scroll_down {
   margin-top: 150px; /* Mueve este elemento hacia abajo */
   text-align: center;
-  font-size: 16px;
-  color: #333;
-
 }
 
 .scroll_down p {
   margin: 0 0 3px 0; /* Reduce márgenes para simplificar */
   font-size: 1.1rem;
-  color: #555;
-  font-family: "Roboto Condensed", sans-serif;
+  color: #797878;
   line-height: 1.2;
   font-weight: 600;
 }
@@ -282,15 +268,6 @@ body {
   width: 100%; /* El contenedor ocupa todo el ancho */
   background-color: #f3f3f3; /* Color de fondo */
   padding: 0 15%; /* Alinea el contenido dentro de la página, similar a márgenes */
-}
-
-/* Estilo para la fila .row (contenido de la fila) */
-.row {
-  display: grid;
-  grid-template-columns: 1fr 3fr; /* Una columna para la imagen y otra para el texto */
-  align-items: center; /* Centra verticalmente el contenido */
-  gap: 10px; /* Espaciado entre las columnas */
-  margin: 0 auto; /* Centra la fila */
 }
 
 /* Estilo para la imagen */
@@ -304,16 +281,22 @@ body {
 
 /* Estilo para la imagen con efecto */
 .service-imagen {
+  max-width: 300px; /* Limita el tamaño máximo si es necesario */
+}
+
+/* Estilo para la imagen con efecto en contacto */
+.contact-imagen,
+.service-imagen {
   display: block;
   width: 100%; /* Asegura que ocupe el ancho total del contenedor */
-  max-width: 300px; /* Limita el tamaño máximo si es necesario */
   margin: 0 auto 25px auto; /* Centra horizontalmente y agrega margen inferior */
   overflow: hidden; /* Oculta desbordes de la imagen */
   border-radius: 8px; /* Esquinas redondeadas (opcional) */
   transition: transform 0.3s ease;
 }
 
-.service-imagen img {
+.service-imagen img,
+.contact-imagen img {
   display: block;
   width: 100%;
   height: auto; /* Mantiene la proporción de la imagen */
@@ -323,11 +306,13 @@ body {
 }
 
 /* Efecto hover */
-.service-imagen:hover {
+.service-imagen:hover,
+.contact-imagen:hover {
   transform: scale(1.05); /* Amplía ligeramente la imagen en hover */
 }
 
-.service-imagen:hover img {
+.service-imagen:hover img,
+.contact-imagen:hover img {
   filter: grayscale(0); /* Cambia a color en hover */
 }
 
@@ -350,13 +335,7 @@ body {
   grid-template-columns: 1fr 3fr; /* Definir dos columnas: una más estrecha para la imagen, y otra más ancha para el texto */
   gap: 20px; /* Espaciado entre las columnas */
   align-items: center; /* Centrar el contenido verticalmente */
-}
-
-.image img {
-  width: 100%; /* Ajusta la imagen al 100% del ancho disponible */
-  height: auto; /* Mantiene la proporción */
-  object-fit: cover; /* Ajusta la imagen sin deformarla */
-  border-radius: 8px; /* Borde redondeado */
+  margin: 0 auto; /* Centra la fila */
 }
 
 .content {
@@ -368,14 +347,12 @@ body {
   font-weight: 600;
   margin-bottom: 10px;
   color: rgb(88, 87, 87); /* Color del texto */
-  font-family: "Roboto Condensed", sans-serif;
 }
 
 .content p {
   font-size: 1rem;
   line-height: 1.6;
   color: #333; /* Color del texto */
-  font-family: "Roboto Condensed", sans-serif;
 }
 
 .second-row {
@@ -383,6 +360,7 @@ body {
   grid-template-columns: 1fr 2fr; /* Definir columnas más estrechas para el texto */
   gap: 20px; /* Espaciado entre las columnas */
   align-items: center; /* Alineación vertical al centro */
+  margin: 0 auto;
 }
 
 .second-row .content {
@@ -390,7 +368,6 @@ body {
 }
 
 .second-row h2 {
-  font-family: "Roboto Condensed", sans-serif;
   font-size: 1.8rem;
   color: #333; /* Color oscuro */
   margin: 0;
@@ -451,7 +428,6 @@ body {
 
 .cta-section h1,
 .cta-section p {
-  font-family: "Roboto Condensed", sans-serif;
   color: #333;
   margin: 0 27% 0 27%;
 }
@@ -483,56 +459,6 @@ body {
   background-color: #555;
 }
 
-/* Estilo del footer */
-.footer {
-  background-color: #222;
-  color: #fff;
-  padding: 20px 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Estilo de las listas de enlaces */
-.footer-left ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 20px;
-}
-
-.footer-left ul li a,
-.footer .social-icons a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-left ul li a:hover,
-.footer .social-icons a:hover {
-  color: #007bff; /* Color de enlace al hacer hover */
-}
-
-/* Estilo de los íconos sociales */
-.footer .social-icons {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 10px;
-}
-
-.footer .social-icons a {
-  font-size: 1.5rem; /* Tamaño de los íconos */
-}
-
-footer p {
-  font-size: 0.9rem;
-  color: #888; /* Gris menos intenso para el texto */
-  text-align: center; /* Centrado del texto */
-  margin-top: 20px; /* Espaciado superior */
-  margin-bottom: 10px; /* Espaciado inferior */
-}
-
 /* Estilo del botón */
 #container-button {
   display: flex;
@@ -552,94 +478,6 @@ button {
   font-family: inherit;
 }
 
-button.learn-more {
-  width: 17rem;
-  height: auto;
-}
-
-button.learn-more .circle {
-  position: relative;
-  display: block;
-  width: 3rem;
-  height: 3rem;
-  background: #282936;
-  border-radius: 1.625rem;
-  transition: width 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-}
-
-button.learn-more .circle .icon {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0.625rem;
-  margin: auto;
-  width: 1.125rem;
-  height: 0.125rem;
-  background: none;
-  transition: transform 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-}
-
-button.learn-more .circle .icon.arrow {
-  background: none;
-}
-
-button.learn-more .circle .icon.arrow::before {
-  position: absolute;
-  content: "";
-  top: -0.25rem;
-  right: 0.0625rem;
-  width: 0.625rem;
-  height: 0.625rem;
-  border-top: 0.125rem solid #fff;
-  border-right: 0.125rem solid #fff;
-  transform: rotate(45deg);
-}
-
-button.learn-more .button-text {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 0.75rem 0;
-  margin: 0 0 0 1.85rem;
-  color: #282936;
-  font-weight: 700;
-  line-height: 1.6;
-  text-align: center;
-  text-transform: uppercase;
-  transition: color 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-}
-
-/* Transiciones en hover */
-button.learn-more:hover .circle {
-  width: 100%;
-}
-
-button.learn-more:hover .circle .icon.arrow {
-  background: #fff;
-  transform: translate(1rem, 0);
-}
-
-button.learn-more:hover .button-text {
-  color: #fff;
-}
-
-/* Responsividad */
-@media (max-width: 768px) {
-  .skills-section {
-    gap: 15px; /* Reduce el espacio entre elementos */
-    margin: 0 5%; /* Reduce los márgenes laterales */
-  }
-}
-
-@media (min-width: 1024px) {
-  .text-column .Tecnologias {
-    line-height: 3.5;
-    margin-top: -20px; /* Desplaza hacia arriba el bloque de texto */
-  }
-}
-
 /* Estilos Pagina SERVICIOS*/
 
 .full-width-section-general {
@@ -652,8 +490,6 @@ button.learn-more:hover .button-text {
 }
 
 .text-column-servicios {
-  display: flex;
-  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   padding: 20px; /* Asegura que haya espacio alrededor del texto */
@@ -671,7 +507,6 @@ button.learn-more:hover .button-text {
   background-color: #fff; /* Fondo blanco */
   padding: 1px 18px; /* Espaciado interno */
   border-radius: 15px; /* Bordes redondeados */
-  font-family: "Roboto Condensed", sans-serif;
 }
 
 .breadcrumb .bullet {
@@ -696,7 +531,6 @@ button.learn-more:hover .button-text {
   background-color: #f7f7f7; /* Fondo gris claro */
   padding: 5px 0px; /* Espaciado interno ajustado */
   border-radius: 12px; /* Bordes redondeados */
-  font-family: "Roboto Condensed", sans-serif;
 }
 
 .skills-breadcrumb .bullet {
@@ -718,21 +552,17 @@ button.learn-more:hover .button-text {
   color: #777; /* Gris suave */
   font-weight: 300; /* Peso ligero */
   margin-top: 5px; /* Separación con el h4 */
-  font-family: "Roboto Condensed", sans-serif; /* Mantiene la consistencia con el resto de la fuente */
   text-align: left; /* Alineación a la izquierda */
 }
 
 /* Estilos para el contenido de servicios */
 .servicios {
-  display: flex;
-  flex-direction: column; /* Asegura que el contenido sea vertical */
   justify-content: flex-start; /* Centra el contenido verticalmente */
   align-items: center; /* Centra el contenido horizontalmente */
   padding: 10px; /* Espacio interno alrededor del contenido */
   text-align: center; /* Centra el texto */
   max-width: 800px; /* Limitar el ancho máximo para mejorar la legibilidad */
   width: 100%; /* Asegura que ocupe todo el ancho disponible dentro de la columna */
-  font-family: "Roboto Condensed", sans-serif;
 }
 
 .servicios h2 {
@@ -776,7 +606,6 @@ button.learn-more:hover .button-text {
 }
 
 .service-item h3 {
-  font-family: "Roboto Condensed", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-size: 1.4rem;
@@ -881,6 +710,7 @@ p {
   align-items: center;
 }
 
+button.learn-more,
 button.learn-more-servicios {
   position: relative;
   display: inline-block;
@@ -895,16 +725,18 @@ button.learn-more-servicios {
   height: auto;
 }
 
+button.learn-more .circle,
 button.learn-more-servicios .circle {
   position: relative;
   display: block;
   width: 3rem;
   height: 3rem;
-  background: #fff; /* Fondo blanco */
+  background: var(--white);
   border-radius: 1.625rem;
   transition: width 0.45s cubic-bezier(0.65, 0, 0.076, 1);
 }
 
+button.learn-more .circle .icon,
 button.learn-more-servicios .circle .icon {
   position: absolute;
   top: 0;
@@ -917,10 +749,12 @@ button.learn-more-servicios .circle .icon {
   transition: transform 0.45s cubic-bezier(0.65, 0, 0.076, 1);
 }
 
+button.learn-more .circle .icon.arrow,
 button.learn-more-servicios .circle .icon.arrow {
   background: none;
 }
 
+button.learn-more .circle .icon.arrow::before,
 button.learn-more-servicios .circle .icon.arrow::before {
   position: absolute;
   content: "";
@@ -928,11 +762,12 @@ button.learn-more-servicios .circle .icon.arrow::before {
   right: 0.0625rem;
   width: 0.625rem;
   height: 0.625rem;
-  border-top: 0.125rem solid #000; /* Color negro para la flecha */
-  border-right: 0.125rem solid #000; /* Color negro para la flecha */
+  border-top: 0.125rem solid var(--black);
+  border-right: 0.125rem solid var(--black);
   transform: rotate(45deg);
 }
 
+button.learn-more .button-text,
 button.learn-more-servicios .button-text {
   position: absolute;
   top: 0;
@@ -941,7 +776,7 @@ button.learn-more-servicios .button-text {
   bottom: 0;
   padding: 0.75rem 0;
   margin: 0 0 0 1.85rem;
-  color: #fff; /* Texto blanco */
+  color: var(--black);
   font-weight: 700;
   line-height: 1.6;
   text-align: center;
@@ -950,29 +785,29 @@ button.learn-more-servicios .button-text {
 }
 
 /* Transiciones en hover */
+button.learn-more:hover .circle,
 button.learn-more-servicios:hover .circle {
   width: 100%;
-  background: #000; /* Fondo negro en hover */
+  background: var(--black);
 }
 
+button.learn-more:hover .circle .icon.arrow,
 button.learn-more-servicios:hover .circle .icon.arrow {
-  background: #fff; /* Fondo negro para la flecha */
+  background: var(--white);
   transform: translate(1rem, 0);
 }
 
+button.learn-more:hover .button-text,
 button.learn-more-servicios:hover .button-text {
-  color: #fff; /* Texto negro en hover */
-}
-button.learn-more-servicios:hover .circle .icon.arrow::before {
-  border-top-color: #fff; /* Cambiar el borde superior a blanco */
-  border-right-color: #fff; /* Cambiar el borde derecho a blanco */
+  color: var(--white);
 }
 
 p + #container-button-servicios {
   margin-top: 30px; /* Agrega un margen superior solo al contenedor del botón */
 }
 
-/* Contenedor común para el formulario y la imagen/título */
+/* Estilos de Contacto */
+
 .form-container {
   display: grid;
   grid-template-columns: 1fr 1fr; /* Dos columnas: una más ancha para el formulario */
@@ -989,8 +824,6 @@ p + #container-button-servicios {
 
 /* Columna de la imagen y el título */
 .image-title-container {
-  display: flex;
-  flex-direction: column;
   justify-content: center; /* Centra verticalmente */
   align-items: flex-start; /* Alinea al margen izquierdo */
   padding: 20px;
@@ -1023,20 +856,11 @@ p + #container-button-servicios {
 /* Columna del formulario */
 .form-column {
   margin-top: 2%;
-  display: flex;
-  flex-direction: column;
   align-items: flex-start; /* Alinea todos los elementos a la izquierda */
   gap: 15px; /* Espaciado entre los elementos */
 }
 
-.contact-form {
-  display: flex;
-  flex-direction: column;
-}
-
 .contact-form .row {
-  display: flex;
-  flex-direction: column;
   width: 100%; /* Para que los inputs ocupen todo el ancho disponible */
   align-items: flex-start; /* Alinea todos los elementos dentro de la fila a la izquierda */
   margin-bottom: 15px;
@@ -1058,8 +882,6 @@ p + #container-button-servicios {
 }
 
 .contact-form .column {
-  display: flex;
-  flex-direction: column;
   width: 100%;
 }
 
@@ -1116,51 +938,6 @@ p + #container-button-servicios {
   background-color: #0056b3;
 }
 
-/* Estilo para la imagen con efecto en contacto */
-.contact-imagen {
-  display: block;
-  width: 100%; /* Asegura que ocupe el ancho total del contenedor */  
-  margin: 0 auto 25px auto; /* Centra horizontalmente y agrega margen inferior */
-  overflow: hidden; /* Oculta desbordes de la imagen */
-  border-radius: 8px; /* Esquinas redondeadas (opcional) */
-  transition: transform 0.3s ease;
-}
-
-.contact-imagen img {
-  display: block;
-  width: 100%;
-  height: auto; /* Mantiene la proporción de la imagen */
-  object-fit: cover; /* Ajusta la imagen dentro del contenedor */
-  filter: grayscale(100%); /* Efecto blanco y negro inicial */
-  transition: filter 0.3s ease; /* Animación suave para el cambio de color */
-}
-
-/* Efecto hover */
-.contact-imagen:hover {
-  transform: scale(1.05); /* Amplía ligeramente la imagen en hover */
-}
-
-.contact-imagen:hover img {
-  filter: grayscale(0); /* Cambia a color en hover */
-}
-/* Estilos responsivos */
-@media (max-width: 768px) {
-  .form-container {
-    grid-template-columns: 1fr; /* Coloca las columnas una debajo de la otra */
-  }
-
-  .image-title-container {
-    text-align: center;
-  }
-
-  .form-column {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Alineamos todos los elementos a la izquierda */
-    gap: 15px; /* Espaciado entre los elementos */
-    width: 100%;
-  }
-}
 .contact-form .terms input[type="checkbox"] {
   width: 20px; /* Ajusta el tamaño del checkbox */
   height: 20px; /* Ajusta la altura del checkbox */
@@ -1192,3 +969,88 @@ p + #container-button-servicios {
   color: #333; /* Color del texto */
   margin-left: 8px;
 }
+/* Estilo del footer */
+
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Estilo de las listas de enlaces */
+.footer-left ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.footer-left ul li a,
+.footer .social-icons a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-left ul li a:hover,
+.footer .social-icons a:hover {
+  color: #007bff; /* Color de enlace al hacer hover */
+}
+
+/* Estilo de los íconos sociales */
+.footer .social-icons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.footer .social-icons a {
+  font-size: 1.5rem; /* Tamaño de los íconos */
+}
+
+footer p {
+  font-size: 0.9rem;
+  color: #888; /* Gris menos intenso para el texto */
+  text-align: center; /* Centrado del texto */
+  margin-top: 20px; /* Espaciado superior */
+  margin-bottom: 10px; /* Espaciado inferior */
+}
+
+/* Responsive ajuste para el margin */
+@media (max-width: 768px) {
+  .navbar .container {
+    margin-left: 5%; /* Reduce el margen en pantallas pequeñas */
+  }
+  .skills-section {
+    gap: 15px; /* Reduce el espacio entre elementos */
+    margin: 0 5%; /* Reduce los márgenes laterales */
+  }
+  .form-container {
+    grid-template-columns: 1fr; /* Coloca las columnas una debajo de la otra */
+  }
+
+  .image-title-container {
+    text-align: center;
+  }
+
+  .form-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alineamos todos los elementos a la izquierda */
+    gap: 15px; /* Espaciado entre los elementos */
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-column .Tecnologias {
+    line-height: 3.5;
+    margin-top: -20px; /* Desplaza hacia arriba el bloque de texto */
+  }
+}
+/* Importo Fuente */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap");
