@@ -109,7 +109,7 @@ body {
 }
 .text-column h1 {
   font-size: 210px;
-  font-weight: bold;
+  font-weight:lighter;
   line-height: 0.9;
   margin-top: 85px;
 }
@@ -163,7 +163,7 @@ body {
 }
 
 .texto_movimiento {
-  font-weight: 550;
+  font-weight: 450;
   font-size: 30px;
   position: relative;
   width: 450px;
