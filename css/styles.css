@@ -15,8 +15,9 @@ body {
   justify-content: space-between;
 }
 .navbar .logo {
-  width: 70px; /* Ajusta el tamaño del logo según sea necesario */
   position: relative;
+  width: 10vw;
+  max-width: 4.375rem;
 }
 
 /* Estilos del menú */
@@ -109,7 +110,7 @@ body {
 }
 .text-column h1 {
   font-size: 210px;
-  font-weight:lighter;
+  font-weight: lighter;
   line-height: 0.9;
   margin-top: 85px;
 }
@@ -124,7 +125,7 @@ body {
 /* Columna Lateral */
 .sidebar-column {
   justify-content: center;
-  align-items: center;  
+  align-items: center;
   background-color: #f8f9fa; /* Fondo opcional */
   margin-top: 15%;
 }
@@ -554,6 +555,256 @@ button {
   margin-top: 5px; /* Separación con el h4 */
   text-align: left; /* Alineación a la izquierda */
 }
+/* Estilos del boton cicular */
+#wrapper{
+  width:100vw;
+  height:20vh;
+  box-sizing:border-box;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.my-super-cool-btn{
+  position:relative;
+  text-decoration:none;
+  color:rgb(64, 64, 64);
+  letter-spacing:1px;
+  font-size:1.5rem;
+  box-sizing:border-box;
+}
+.my-super-cool-btn span{
+  position:relative;
+  box-sizing:border-box;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:180px;
+  height:180px;
+}
+.my-super-cool-btn span:before{
+  content:'';
+  width:100%;
+  height:100%;
+  display:block;
+  position:absolute;
+  border-radius:100%;
+  border:7px solid rgb(60, 59, 59);
+  box-sizing:border-box;
+  transition: all .85s cubic-bezier(0.25, 1, 0.33, 1);
+  box-shadow: 0 30px 85px rgba(0,0,0,0.14), 0 15px 35px rgba(0,0,0,0.14);
+}
+.my-super-cool-btn:hover span:before{
+  transform:scale(0.8);
+  box-shadow: 0 20px 55px rgba(0,0,0,0.14), 0 15px 35px rgba(0,0,0,0.14);
+}
+.my-super-cool-btn .dots-container{
+  opacity:0;
+  animation: intro 1.6s;
+  animation-fill-mode: forwards;
+}
+.my-super-cool-btn .dot{
+  width:8px;
+  height:8px;
+  display:block;
+  background-color:#6f6f6c;
+  border-radius:100%;
+  position:absolute;
+  transition: all .85s cubic-bezier(0.25, 1, 0.33, 1);
+}
+.my-super-cool-btn .dot:nth-child(1){
+  top:50px;
+  left:50px;
+  transform:rotate(-140deg);
+  animation: swag1-out 0.3s;
+  animation-fill-mode: forwards;
+  opacity:0;
+}
+.my-super-cool-btn .dot:nth-child(2){
+  top:50px;
+  right:50px;
+  transform:rotate(140deg);
+  animation: swag2-out 0.3s;
+  animation-fill-mode: forwards;
+  opacity:0;
+}
+.my-super-cool-btn .dot:nth-child(3){
+  bottom:50px;
+  left:50px;
+  transform:rotate(140deg);
+  animation: swag3-out 0.3s;
+  animation-fill-mode: forwards;
+  opacity:0;
+}
+.my-super-cool-btn .dot:nth-child(4){
+  bottom:50px;
+  right:50px;
+  transform:rotate(-140deg);
+  animation: swag4-out 0.3s;
+  animation-fill-mode: forwards;
+  opacity:0;
+}
+.my-super-cool-btn:hover .dot:nth-child(1){
+  animation: swag1 0.3s;
+  animation-fill-mode: forwards;
+}
+.my-super-cool-btn:hover .dot:nth-child(2){
+  animation: swag2 0.3s;
+  animation-fill-mode: forwards;
+}
+.my-super-cool-btn:hover .dot:nth-child(3){
+  animation: swag3 0.3s;
+  animation-fill-mode: forwards;
+}
+.my-super-cool-btn:hover .dot:nth-child(4){
+  animation: swag4 0.3s;
+  animation-fill-mode: forwards;
+}
+@keyframes intro {
+   0% {
+     opacity:0;
+  }
+  100% {
+     opacity:1;
+  }
+}
+@keyframes swag1 {
+   0% {
+     top:50px;
+     left:50px;
+     width:8px;
+  }
+  50% {
+    width:30px;
+    opacity:1;
+  }
+  100% {
+     top:20px;
+     left:20px;
+     width:8px;
+     opacity:1;
+  }
+}
+@keyframes swag1-out {
+   0% {
+     top:20px;
+     left:20px;
+     width:8px;
+  }
+  50% {
+     width:30px;
+    opacity:1;
+  }
+  100% {
+     top:50px;
+     left:50px;
+     width:8px;
+    opacity:0;
+  }
+}
+@keyframes swag2 {
+   0% {
+     top:50px;
+     right:50px;
+     width:8px;
+  }
+  50% {
+    width:30px;
+    opacity:1;
+  }
+  100% {
+     top:20px;
+     right:20px;
+     width:8px;
+     opacity:1;
+  }
+}
+@keyframes swag2-out {
+   0% {
+     top:20px;
+     right:20px;
+     width:8px;
+  }
+  50% {
+     width:30px;
+    opacity:1;
+  }
+  100% {
+     top:50px;
+     right:50px;
+     width:8px;
+    opacity:0;
+  }
+}
+@keyframes swag3 {
+   0% {
+     bottom:50px;
+     left:50px;
+     width:8px;
+  }
+  50% {
+    width:30px;
+    opacity:1;
+  }
+  100% {
+     bottom:20px;
+     left:20px;
+     width:8px;
+     opacity:1;
+  }
+}
+@keyframes swag3-out {
+   0% {
+     bottom:20px;
+     left:20px;
+     width:8px;
+  }
+  50% {
+     width:30px;
+    opacity:1;
+  }
+  100% {
+     bottom:50px;
+     left:50px;
+     width:8px;
+    opacity:0;
+  }
+}
+@keyframes swag4 {
+   0% {
+     bottom:50px;
+     right:50px;
+     width:8px;
+  }
+  50% {
+    width:30px;
+    opacity:1;
+  }
+  100% {
+     bottom:20px;
+     right:20px;
+     width:8px;
+     opacity:1;
+  }
+}
+@keyframes swag4-out {
+   0% {
+     bottom:20px;
+     right:20px;
+     width:8px;
+  }
+  50% {
+     width:30px;
+    opacity:1;
+  }
+  100% {
+     bottom:50px;
+     right:50px;
+     width:8px;
+    opacity:0;
+  }
+}
+
+
 
 /* Estilos para el contenido de servicios */
 .servicios {
@@ -708,98 +959,6 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-button.learn-more,
-button.learn-more-servicios {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  outline: none;
-  border: 0;
-  background: transparent;
-  padding: 0;
-  font-size: inherit;
-  font-family: inherit;
-  width: 17rem;
-  height: auto;
-}
-
-button.learn-more .circle,
-button.learn-more-servicios .circle {
-  position: relative;
-  display: block;
-  width: 3rem;
-  height: 3rem;
-  background: var(--white);
-  border-radius: 1.625rem;
-  transition: width 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-}
-
-button.learn-more .circle .icon,
-button.learn-more-servicios .circle .icon {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0.625rem;
-  margin: auto;
-  width: 1.125rem;
-  height: 0.125rem;
-  background: none;
-  transition: transform 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-}
-
-button.learn-more .circle .icon.arrow,
-button.learn-more-servicios .circle .icon.arrow {
-  background: none;
-}
-
-button.learn-more .circle .icon.arrow::before,
-button.learn-more-servicios .circle .icon.arrow::before {
-  position: absolute;
-  content: "";
-  top: -0.25rem;
-  right: 0.0625rem;
-  width: 0.625rem;
-  height: 0.625rem;
-  border-top: 0.125rem solid var(--black);
-  border-right: 0.125rem solid var(--black);
-  transform: rotate(45deg);
-}
-
-button.learn-more .button-text,
-button.learn-more-servicios .button-text {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 0.75rem 0;
-  margin: 0 0 0 1.85rem;
-  color: var(--black);
-  font-weight: 700;
-  line-height: 1.6;
-  text-align: center;
-  text-transform: uppercase;
-  transition: color 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-}
-
-/* Transiciones en hover */
-button.learn-more:hover .circle,
-button.learn-more-servicios:hover .circle {
-  width: 100%;
-  background: var(--black);
-}
-
-button.learn-more:hover .circle .icon.arrow,
-button.learn-more-servicios:hover .circle .icon.arrow {
-  background: var(--white);
-  transform: translate(1rem, 0);
-}
-
-button.learn-more:hover .button-text,
-button.learn-more-servicios:hover .button-text {
-  color: var(--white);
 }
 
 p + #container-button-servicios {
@@ -1054,3 +1213,29 @@ footer p {
 }
 /* Importo Fuente */
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
