@@ -556,255 +556,253 @@ button {
   text-align: left; /* Alineación a la izquierda */
 }
 /* Estilos del boton cicular */
-#wrapper{
-  width:80vw;
-  height:20vh;  
+#wrapper {
+  width: 80vw;
+  height: 20vh;
   margin-left: 10%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.my-super-cool-btn{
-  position:relative;
-  text-decoration:none;
-  color:rgb(64, 64, 64);
-  letter-spacing:1px;
-  font-size:1.5rem;
-  box-sizing:border-box;
+.my-super-cool-btn {
+  position: relative;
+  text-decoration: none;
+  color: rgb(64, 64, 64);
+  letter-spacing: 1px;
+  font-size: 1.5rem;
+  box-sizing: border-box;
 }
-.my-super-cool-btn span{
-  position:relative;
-  box-sizing:border-box;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  width:180px;
-  height:180px;
+.my-super-cool-btn span {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 180px;
 }
-.my-super-cool-btn span:before{
-  content:'';
-  width:100%;
-  height:100%;
-  display:block;
-  position:absolute;
-  border-radius:100%;
-  border:7px solid rgb(60, 59, 59);
-  box-sizing:border-box;
-  transition: all .85s cubic-bezier(0.25, 1, 0.33, 1);
-  box-shadow: 0 30px 85px rgba(0,0,0,0.14), 0 15px 35px rgba(0,0,0,0.14);
+.my-super-cool-btn span:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  border-radius: 100%;
+  border: 7px solid rgb(60, 59, 59);
+  box-sizing: border-box;
+  transition: all 0.85s cubic-bezier(0.25, 1, 0.33, 1);
+  box-shadow: 0 30px 85px rgba(0, 0, 0, 0.14), 0 15px 35px rgba(0, 0, 0, 0.14);
 }
-.my-super-cool-btn:hover span:before{
-  transform:scale(0.8);
-  box-shadow: 0 20px 55px rgba(0,0,0,0.14), 0 15px 35px rgba(0,0,0,0.14);
+.my-super-cool-btn:hover span:before {
+  transform: scale(0.8);
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.14), 0 15px 35px rgba(0, 0, 0, 0.14);
 }
-.my-super-cool-btn .dots-container{
-  opacity:0;
+.my-super-cool-btn .dots-container {
+  opacity: 0;
   animation: intro 1.6s;
   animation-fill-mode: forwards;
 }
-.my-super-cool-btn .dot{
-  width:8px;
-  height:8px;
-  display:block;
-  background-color:#6f6f6c;
-  border-radius:100%;
-  position:absolute;
-  transition: all .85s cubic-bezier(0.25, 1, 0.33, 1);
+.my-super-cool-btn .dot {
+  width: 8px;
+  height: 8px;
+  display: block;
+  background-color: #6f6f6c;
+  border-radius: 100%;
+  position: absolute;
+  transition: all 0.85s cubic-bezier(0.25, 1, 0.33, 1);
 }
-.my-super-cool-btn .dot:nth-child(1){
-  top:50px;
-  left:50px;
-  transform:rotate(-140deg);
+.my-super-cool-btn .dot:nth-child(1) {
+  top: 50px;
+  left: 50px;
+  transform: rotate(-140deg);
   animation: swag1-out 0.3s;
   animation-fill-mode: forwards;
-  opacity:0;
+  opacity: 0;
 }
-.my-super-cool-btn .dot:nth-child(2){
-  top:50px;
-  right:50px;
-  transform:rotate(140deg);
+.my-super-cool-btn .dot:nth-child(2) {
+  top: 50px;
+  right: 50px;
+  transform: rotate(140deg);
   animation: swag2-out 0.3s;
   animation-fill-mode: forwards;
-  opacity:0;
+  opacity: 0;
 }
-.my-super-cool-btn .dot:nth-child(3){
-  bottom:50px;
-  left:50px;
-  transform:rotate(140deg);
+.my-super-cool-btn .dot:nth-child(3) {
+  bottom: 50px;
+  left: 50px;
+  transform: rotate(140deg);
   animation: swag3-out 0.3s;
   animation-fill-mode: forwards;
-  opacity:0;
+  opacity: 0;
 }
-.my-super-cool-btn .dot:nth-child(4){
-  bottom:50px;
-  right:50px;
-  transform:rotate(-140deg);
+.my-super-cool-btn .dot:nth-child(4) {
+  bottom: 50px;
+  right: 50px;
+  transform: rotate(-140deg);
   animation: swag4-out 0.3s;
   animation-fill-mode: forwards;
-  opacity:0;
+  opacity: 0;
 }
-.my-super-cool-btn:hover .dot:nth-child(1){
+.my-super-cool-btn:hover .dot:nth-child(1) {
   animation: swag1 0.3s;
   animation-fill-mode: forwards;
 }
-.my-super-cool-btn:hover .dot:nth-child(2){
+.my-super-cool-btn:hover .dot:nth-child(2) {
   animation: swag2 0.3s;
   animation-fill-mode: forwards;
 }
-.my-super-cool-btn:hover .dot:nth-child(3){
+.my-super-cool-btn:hover .dot:nth-child(3) {
   animation: swag3 0.3s;
   animation-fill-mode: forwards;
 }
-.my-super-cool-btn:hover .dot:nth-child(4){
+.my-super-cool-btn:hover .dot:nth-child(4) {
   animation: swag4 0.3s;
   animation-fill-mode: forwards;
 }
 @keyframes intro {
-   0% {
-     opacity:0;
+  0% {
+    opacity: 0;
   }
   100% {
-     opacity:1;
+    opacity: 1;
   }
 }
 @keyframes swag1 {
-   0% {
-     top:50px;
-     left:50px;
-     width:8px;
+  0% {
+    top: 50px;
+    left: 50px;
+    width: 8px;
   }
   50% {
-    width:30px;
-    opacity:1;
+    width: 30px;
+    opacity: 1;
   }
   100% {
-     top:20px;
-     left:20px;
-     width:8px;
-     opacity:1;
+    top: 20px;
+    left: 20px;
+    width: 8px;
+    opacity: 1;
   }
 }
 @keyframes swag1-out {
-   0% {
-     top:20px;
-     left:20px;
-     width:8px;
+  0% {
+    top: 20px;
+    left: 20px;
+    width: 8px;
   }
   50% {
-     width:30px;
-    opacity:1;
+    width: 30px;
+    opacity: 1;
   }
   100% {
-     top:50px;
-     left:50px;
-     width:8px;
-    opacity:0;
+    top: 50px;
+    left: 50px;
+    width: 8px;
+    opacity: 0;
   }
 }
 @keyframes swag2 {
-   0% {
-     top:50px;
-     right:50px;
-     width:8px;
+  0% {
+    top: 50px;
+    right: 50px;
+    width: 8px;
   }
   50% {
-    width:30px;
-    opacity:1;
+    width: 30px;
+    opacity: 1;
   }
   100% {
-     top:20px;
-     right:20px;
-     width:8px;
-     opacity:1;
+    top: 20px;
+    right: 20px;
+    width: 8px;
+    opacity: 1;
   }
 }
 @keyframes swag2-out {
-   0% {
-     top:20px;
-     right:20px;
-     width:8px;
+  0% {
+    top: 20px;
+    right: 20px;
+    width: 8px;
   }
   50% {
-     width:30px;
-    opacity:1;
+    width: 30px;
+    opacity: 1;
   }
   100% {
-     top:50px;
-     right:50px;
-     width:8px;
-    opacity:0;
+    top: 50px;
+    right: 50px;
+    width: 8px;
+    opacity: 0;
   }
 }
 @keyframes swag3 {
-   0% {
-     bottom:50px;
-     left:50px;
-     width:8px;
+  0% {
+    bottom: 50px;
+    left: 50px;
+    width: 8px;
   }
   50% {
-    width:30px;
-    opacity:1;
+    width: 30px;
+    opacity: 1;
   }
   100% {
-     bottom:20px;
-     left:20px;
-     width:8px;
-     opacity:1;
+    bottom: 20px;
+    left: 20px;
+    width: 8px;
+    opacity: 1;
   }
 }
 @keyframes swag3-out {
-   0% {
-     bottom:20px;
-     left:20px;
-     width:8px;
+  0% {
+    bottom: 20px;
+    left: 20px;
+    width: 8px;
   }
   50% {
-     width:30px;
-    opacity:1;
+    width: 30px;
+    opacity: 1;
   }
   100% {
-     bottom:50px;
-     left:50px;
-     width:8px;
-    opacity:0;
+    bottom: 50px;
+    left: 50px;
+    width: 8px;
+    opacity: 0;
   }
 }
 @keyframes swag4 {
-   0% {
-     bottom:50px;
-     right:50px;
-     width:8px;
+  0% {
+    bottom: 50px;
+    right: 50px;
+    width: 8px;
   }
   50% {
-    width:30px;
-    opacity:1;
+    width: 30px;
+    opacity: 1;
   }
   100% {
-     bottom:20px;
-     right:20px;
-     width:8px;
-     opacity:1;
+    bottom: 20px;
+    right: 20px;
+    width: 8px;
+    opacity: 1;
   }
 }
 @keyframes swag4-out {
-   0% {
-     bottom:20px;
-     right:20px;
-     width:8px;
+  0% {
+    bottom: 20px;
+    right: 20px;
+    width: 8px;
   }
   50% {
-     width:30px;
-    opacity:1;
+    width: 30px;
+    opacity: 1;
   }
   100% {
-     bottom:50px;
-     right:50px;
-     width:8px;
-    opacity:0;
+    bottom: 50px;
+    right: 50px;
+    width: 8px;
+    opacity: 0;
   }
 }
-
-
 
 /* Estilos para el contenido de servicios */
 .servicios {
@@ -1178,64 +1176,122 @@ footer p {
   margin-top: 20px; /* Espaciado superior */
   margin-bottom: 10px; /* Espaciado inferior */
 }
+/* Pantallas desde 270px, dispositivos moviles */
+@media (min-width: 270px) and (max-width:1023px) {
 
-/* Responsive ajuste para el margin */
-@media (max-width: 768px) {
-  .navbar .container {
-    margin-left: 5%; /* Reduce el margen en pantallas pequeñas */
-  }
-  .skills-section {
-    gap: 15px; /* Reduce el espacio entre elementos */
-    margin: 0 5%; /* Reduce los márgenes laterales */
-  }
-  .form-container {
-    grid-template-columns: 1fr; /* Coloca las columnas una debajo de la otra */
-  }
-
-  .image-title-container {
-    text-align: center;
-  }
-
-  .form-column {
+  .full-width-section {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Alineamos todos los elementos a la izquierda */
-    gap: 15px; /* Espaciado entre los elementos */
-    width: 100%;
+    flex-direction: column;    
+    align-items: center;
+}
+  .sidebar-text,.sidebar-line,.scroll_down{
+    display: none;
   }
+  .sidebar-column {    
+    margin-top: 5%;
+}
+  .Tecnologias p {
+    margin: 0 0 3px 0;
+    text-align: center;
 }
 
-@media (min-width: 1024px) {
+  .Tecnologias p:first-child {
+   text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+}
+.Tecnologias p:nth-child(2) {
+  font-size: .8rem;
+}
+.text-column {    
+  margin-top: 1%;
+}
+  .text-column h1 {
+    font-size: 60px;
+    margin-top: 35px;
+    margin-left: 24%;
+  }
+  .texto_movimiento {
+    width: 250px;
+    margin-left: 14%;
+  }
+  p {
+    font-size: .8rem;    
+  }
+  .photo-column {   
+    justify-content: center;    
+}
+.row {
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  text-align: center;
+}
+.content h2 {
+  font-size: 1.1rem;    
+  text-align: center;
+}
+.content p {
+  font-size: 0.8rem;
+  
+}
+.skill-subtitle {  
+  text-align: center;
+}
+.cta-section h1 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.cta-section p {
+  font-size: 1rem;
+  margin-bottom: 20%;
+}
+.my-super-cool-btn span {  
+  width: 100px;
+  height: 100px;
+}
+.my-super-cool-btn {  
+  font-size: .9rem; 
+}
+.footer-left{
+  display: none;
+}
+}
+
+
+/* Pantallas desde 1024px */
+@media (min-width: 1024px){
   .text-column .Tecnologias {
     line-height: 3.5;
     margin-top: -20px; /* Desplaza hacia arriba el bloque de texto */
   }
+  .text-column h1 {
+    font-size: 130px;
+  }
+  .texto_movimiento {
+    width: 300px;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+  .scroll_down {
+    margin-top: 20%;
+  }
+  .skills-breadcrumb {    
+    margin-top: 2%;
+  }
+  .content h2 {
+    font-size: 1.1rem;    
 }
+.cta-section p {  
+  margin-bottom: 10%;
+}
+.my-super-cool-btn span {  
+  margin-bottom: 25%;
+}
+}
+
 /* Importo Fuente */
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
