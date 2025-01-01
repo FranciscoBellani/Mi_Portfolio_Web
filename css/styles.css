@@ -417,7 +417,7 @@ body {
 }
 
 .third-row .tags a:hover {
-  color: #007bff; /* Color para cuando el cursor pasa sobre las etiquetas */
+  color: #555; /* Color para cuando el cursor pasa sobre las etiquetas */
 }
 
 /* Sección CTA */
@@ -1092,7 +1092,7 @@ p + #container-button-servicios {
 }
 
 .contact-form button:hover {
-  background-color: #0056b3;
+  background-color: #555;
 }
 
 .contact-form .terms input[type="checkbox"] {
@@ -1220,7 +1220,7 @@ footer p {
   }
   .photo-column {   
     justify-content: center; 
-    padding-left: 14%;
+    padding-left: 16%;
 }
 .row {
   display: flex;
@@ -1259,6 +1259,18 @@ footer p {
 .footer-left{
   display: none;
 }
+.form-container {
+    display: flex;
+    flex-direction: column;    
+}
+
+.servicios h2 {
+  font-size: 1.1rem;
+}
+.servicios p {
+  font-size: .8rem;
+  }
+
 }
 
 
