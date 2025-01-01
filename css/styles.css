@@ -557,9 +557,9 @@ button {
 }
 /* Estilos del boton cicular */
 #wrapper{
-  width:100vw;
-  height:20vh;
-  box-sizing:border-box;
+  width:80vw;
+  height:20vh;  
+  margin-left: 10%;
   display:flex;
   align-items:center;
   justify-content:center;
