@@ -1220,7 +1220,7 @@ footer p {
   }
   .photo-column {   
     justify-content: center; 
-    margin-left: 11%;   
+    padding-left: 11%;
 }
 .row {
   display: flex;
