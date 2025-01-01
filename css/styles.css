@@ -1219,7 +1219,8 @@ footer p {
     font-size: .8rem;    
   }
   .photo-column {   
-    justify-content: center;    
+    justify-content: center; 
+    margin-left: 11%;   
 }
 .row {
   display: flex;
