@@ -486,6 +486,46 @@ button {
   font-size: inherit;
   font-family: inherit;
 }
+/* Contenedor del slider */
+.slider-container {
+  width: 850px; /* Ancho fijo */
+  overflow: hidden; /* Oculta contenido excedente */  
+  margin: 20px auto; /* Centrado horizontal */
+  position: relative; /* Posicionamiento interno */
+  margin-left: 1%;
+  margin-top: 3%;
+}
+
+/* Slider */
+.slider {
+  display: flex; /* Contenido en fila */
+  gap: 10px; /* Espaciado entre ítems */
+  animation: slide 10s linear infinite; /* Animación infinita */
+ align-items: center;
+}
+
+/* Elementos individuales */
+.slide-item {
+  background-color: #797878; /* Fondo gris */
+  color: #fff; 
+  padding: 10px 15px; /* Espaciado interno */  
+  font-family: Roboto, sans-serif; /* Fuente */
+  font-size: .8rem; /* Tamaño de fuente */
+  text-align: center; /* Centra texto */
+  flex-shrink: 0; /* Evita que los ítems se encojan */
+  white-space: nowrap; /* Evita que el texto se corte */
+  display: inline-flex;
+  align-items: center; /* Alineación vertical de los elementos dentro de .slide-item */  
+  height: 23px; /* Establecer el alto */
+  
+}
+.bullet {
+  color: #888;
+  padding-right: 3px;
+  font-size: 2rem; /* Tamaño más grande para el bullet */
+  
+}
+
 
 /* Estilos Pagina SERVICIOS*/
 
@@ -1223,6 +1263,10 @@ footer p {
   .texto_movimiento {
     width: 250px;
     margin-left: 14%;
+  }
+
+  .texto_movimiento .word {
+    margin-left: -1%;
   }
   p {
     font-size: 0.8rem;
