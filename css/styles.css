@@ -1282,6 +1282,7 @@ footer p {
   .text-column {
     justify-content: flex-start;
     align-items: start;
+    margin-left: -5%;
   }
   .text-column h1 {
     font-size: 100px;
