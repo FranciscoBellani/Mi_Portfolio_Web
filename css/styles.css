@@ -1275,7 +1275,7 @@ footer p {
 }
 @media (min-width: 700px) and (max-width: 1023px) {
   .sidebar-text,
-  .sidebar-line {
+  .sidebar-line,.scroll_down {
     display: none;
   }
 
@@ -1308,10 +1308,7 @@ footer p {
   }
   .second-row p {
     margin-top: 25%;
-  }
-  .scroll_down {
-    margin-top: 10%;
-  }
+  }  
   .skills-breadcrumb {
     margin-top: 4%;
   }
