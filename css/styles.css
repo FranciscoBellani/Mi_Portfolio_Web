@@ -506,7 +506,7 @@ button {
 
 /* Elementos individuales */
 .slide-item {
-  background-color: #797878; /* Fondo gris */
+  background-color: #6c6c6c; /* Fondo gris */
   color: #fff; 
   padding: 10px 15px; /* Espaciado interno */  
   font-family: Roboto, sans-serif; /* Fuente */
@@ -520,9 +520,9 @@ button {
   
 }
 .bullet {
-  color: #888;
+  color: #fff;
   padding-right: 3px;
-  font-size: 2rem; /* Tamaño más grande para el bullet */
+  font-size: 1.6rem; /* Tamaño más grande para el bullet */
   
 }
 
@@ -924,15 +924,15 @@ p {
   border-radius: 8px; /* Esquinas redondeadas (opcional) */
   transition: transform 0.3s ease;
 }
-
-.service-imagen img {
+ 
+/* .service-imagen img {
   display: block;
   width: 100%;
-  height: auto; /* Mantiene la proporción de la imagen */
-  object-fit: cover; /* Ajusta la imagen dentro del contenedor */
-  filter: grayscale(100%); /* Efecto blanco y negro inicial */
-  transition: filter 0.3s ease; /* Animación suave para el cambio de color */
-}
+  height: auto; 
+  object-fit: cover; 
+  filter: grayscale(100%); 
+  transition: filter 0.3s ease; 
+} */
 
 .service-item:hover .service-imagen {
   transform: scale(1.05); /* Amplía ligeramente la imagen en hover */
@@ -1323,6 +1323,9 @@ footer p {
   .servicios p {
     font-size: 0.8rem;
   }
+  .slider-container {
+    width: 310px; /* Ancho fijo */
+  }
 }
 @media (min-width: 700px) and (max-width: 1023px) {
   .sidebar-text,
@@ -1380,7 +1383,9 @@ footer p {
   .navbar-toggler {
     margin-right: -5%;
   }
-
+  .slider-container {
+    width: 300px; /* Ancho fijo */
+  }
   
 }
 
@@ -1412,6 +1417,7 @@ footer p {
   .my-super-cool-btn span {
     margin-bottom: 25%;
   }
+  
 }
 
 /* Animaciones */
