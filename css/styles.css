@@ -1325,6 +1325,7 @@ footer p {
   }
   .slider-container {
     width: 280px; /* Ancho fijo */
+    margin-right: 2%;
   }
 }
 @media (min-width: 700px) and (max-width: 1023px) {
