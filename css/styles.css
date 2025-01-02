@@ -1324,7 +1324,7 @@ footer p {
     font-size: 0.8rem;
   }
   .slider-container {
-    width: 310px; /* Ancho fijo */
+    width: 280px; /* Ancho fijo */
   }
 }
 @media (min-width: 700px) and (max-width: 1023px) {
