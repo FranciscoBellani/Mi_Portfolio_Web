@@ -1297,7 +1297,7 @@ footer p {
   }
 
   .texto_movimiento {
-    width: 250px;
+    width: 270px;
   }
 
   p {
@@ -1329,9 +1329,8 @@ footer p {
     display: none;
   }
   .navbar-toggler {
-    margin-right: -5%;
-  }
-  
+    margin-right: -6rem;
+  }  
 }
 
 /* Pantallas desde 1024px */
