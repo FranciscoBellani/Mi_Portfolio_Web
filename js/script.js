@@ -52,3 +52,29 @@ function splitLetters(word) {
 
 changeWord();
 setInterval(changeWord, 4000);
+
+
+// Slider del Index de habilidades
+
+const sliderContainer = document.querySelector('.slider-container');
+const slider = document.querySelector('.slider');
+
+// Clona los elementos para crear un efecto de bucle infinito
+const items = [...slider.children];
+items.forEach(item => {
+  const clone = item.cloneNode(true); // Clona cada ítem
+  slider.appendChild(clone); // Agrega los clones al final del slider
+});
+
+// Configura la animación infinita
+let scrollAmount = 0;
+function scrollSlider() {
+  scrollAmount += 1; // Incrementa el desplazamiento
+  if (scrollAmount >= slider.scrollWidth / 2) {
+    scrollAmount = 0; // Reinicia el desplazamiento cuando llega al final
+  }
+  slider.style.transform = `translateX(-${scrollAmount}px)`; // Aplica el desplazamiento
+}
+
+// Ajusta la velocidad del carrusel
+setInterval(scrollSlider, 20); // Cambia el valor para ajustar la velocidad
