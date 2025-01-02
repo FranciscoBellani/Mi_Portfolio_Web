@@ -1329,8 +1329,10 @@ footer p {
     display: none;
   }
   .navbar-toggler {
-    margin-right: -6rem;
-  }  
+    margin-right: -5%;
+  }
+
+  
 }
 
 /* Pantallas desde 1024px */
