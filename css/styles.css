@@ -1177,35 +1177,36 @@ footer p {
   margin-bottom: 10px; /* Espaciado inferior */
 }
 /* Pantallas desde 270px, dispositivos moviles */
-@media (min-width: 270px) and (max-width:1023px) {
-
+@media (min-width: 270px) and (max-width: 699px) {
   .full-width-section {
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
     align-items: center;
-}
-  .sidebar-text,.sidebar-line,.scroll_down{
+  }
+  .sidebar-text,
+  .sidebar-line,
+  .scroll_down {
     display: none;
   }
-  .sidebar-column {    
+  .sidebar-column {
     margin-top: 5%;
-}
+  }
   .Tecnologias p {
     margin: 0 0 3px 0;
     text-align: center;
-}
+  }
 
   .Tecnologias p:first-child {
-   text-align: center;
+    text-align: center;
     font-weight: 600;
     font-size: 1rem;
-}
-.Tecnologias p:nth-child(2) {
-  font-size: .8rem;
-}
-.text-column {    
-  margin-top: 1%;
-}
+  }
+  .Tecnologias p:nth-child(2) {
+    font-size: 0.8rem;
+  }
+  .text-column {
+    margin-top: 1%;
+  }
   .text-column h1 {
     font-size: 60px;
     margin-top: 35px;
@@ -1216,66 +1217,121 @@ footer p {
     margin-left: 14%;
   }
   p {
-    font-size: .8rem;    
+    font-size: 0.8rem;
   }
-  .photo-column {   
-    justify-content: center; 
+  .photo-column {
+    justify-content: center;
     padding-left: 16%;
-}
-.row {
-  display: flex;
-  flex-direction: column;
-}
-.content {
-  text-align: center;
-}
-.content h2 {
-  font-size: 1.1rem;    
-  text-align: center;
-}
-.content p {
-  font-size: 0.8rem;
-  
-}
-.skill-subtitle {  
-  text-align: center;
-}
-.cta-section h1 {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  text-align: center;
-}
-.cta-section p {
-  font-size: 1rem;
-  margin-bottom: 20%;
-}
-.my-super-cool-btn span {  
-  width: 100px;
-  height: 100px;
-}
-.my-super-cool-btn {  
-  font-size: .9rem; 
-}
-.footer-left{
-  display: none;
-}
-.form-container {
+  }
+  .row {
     display: flex;
-    flex-direction: column;    
-}
+    flex-direction: column;
+  }
+  .content {
+    text-align: center;
+  }
+  .content h2 {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  .content p {
+    font-size: 0.8rem;
+  }
+  .skill-subtitle {
+    text-align: center;
+  }
+  .cta-section h1 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .cta-section p {
+    font-size: 1rem;
+    margin-bottom: 20%;
+  }
+  .my-super-cool-btn span {
+    width: 100px;
+    height: 100px;
+  }
+  .my-super-cool-btn {
+    font-size: 0.9rem;
+  }
+  .footer-left {
+    display: none;
+  }
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-.servicios h2 {
-  font-size: 1.1rem;
+  .servicios h2 {
+    font-size: 1.1rem;
+  }
+  .servicios p {
+    font-size: 0.8rem;
+  }
 }
-.servicios p {
-  font-size: .8rem;
+@media (min-width: 700px) and (max-width: 1023px) {
+  .sidebar-text,
+  .sidebar-line{
+    display: none;
+  }
+  
+  .text-column {    
+    justify-content:flex-start;
+    align-items:start;    
+  }
+  .text-column h1 {
+    font-size: 100px;
+    margin-top: 25%;
+  }
+
+  .Tecnologias p:first-child {
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
+  .Tecnologias p:nth-child(2) {
+    font-size: 0.8rem;
+  }
+
+  .texto_movimiento {
+    width: 250px;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+  .content p {
+    font-size: .9rem;
+}
+.second-row p {
+  margin-top: 25%;
+}
+  .scroll_down {
+    margin-top: 20%;
+  }
+  .skills-breadcrumb {
+    margin-top: 4%;
+  }
+  .content h2 {
+    font-size: .9rem;
+    line-height: 1.4;
+  }
+  .cta-section p {
+    margin-bottom: 15%;
+  }
+  .my-super-cool-btn span {
+    margin-bottom: 25%;
+  }
+  .footer-left {
+    display: none;
   }
 
 }
-
 
 /* Pantallas desde 1024px */
-@media (min-width: 1024px){
+@media (min-width: 1024px) {
   .text-column .Tecnologias {
     line-height: 3.5;
     margin-top: -20px; /* Desplaza hacia arriba el bloque de texto */
@@ -1292,18 +1348,18 @@ footer p {
   .scroll_down {
     margin-top: 20%;
   }
-  .skills-breadcrumb {    
+  .skills-breadcrumb {
     margin-top: 2%;
   }
   .content h2 {
-    font-size: 1.1rem;    
-}
-.cta-section p {  
-  margin-bottom: 10%;
-}
-.my-super-cool-btn span {  
-  margin-bottom: 25%;
-}
+    font-size: 1.1rem;
+  }
+  .cta-section p {
+    margin-bottom: 10%;
+  }
+  .my-super-cool-btn span {
+    margin-bottom: 25%;
+  }
 }
 
 /* Importo Fuente */
