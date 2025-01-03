@@ -5,7 +5,7 @@ body {
   padding: 0;
   height: 100%;
   overflow: auto;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;  
 }
 /* Menu Contenedor principal */
 .navbar .container {
@@ -256,6 +256,7 @@ body {
 .scroll_down {
   margin-top: 150px; /* Mueve este elemento hacia abajo */
   text-align: center;
+  cursor: pointer;
 }
 
 .scroll_down p {
@@ -1418,9 +1419,16 @@ footer p {
   .my-super-cool-btn span {
     margin-bottom: 25%;
   }
-  
+  .slider-container {
+    width: 600px; /* Ancho fijo */
+  }
 }
-
+/* Pantallas desde 1024px */
+@media (min-width: 1400px) {
+  .slider-container {
+    width: 800px; /* Ancho fijo */
+  }
+}
 /* Animaciones */
 
 .scroll-container {
