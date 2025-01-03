@@ -1,3 +1,16 @@
+function smoothScrollTo(targetId) {
+  var target = document.getElementById(targetId);
+  if (target) {
+    console.log("Elemento encontrado:", targetId);
+    target.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'  // Puede ajustar 'start', 'center', o 'end' según lo que necesites
+    });
+  } else {
+    console.log("Elemento no encontrado:", targetId);
+  }
+}
+
 var words = document.getElementsByClassName('word');
 var wordArray = [];
 var currentWord = 0;
@@ -78,3 +91,7 @@ function scrollSlider() {
 
 // Ajusta la velocidad del carrusel
 setInterval(scrollSlider, 20); // Cambia el valor para ajustar la velocidad
+
+
+
+  
