@@ -17,7 +17,10 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
       rel="stylesheet"
     />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- Navbar -->
@@ -43,11 +46,33 @@
               <a class="nav-link" href="servicios.html">Servicios</a>
             </li>
             <li class="nav-item"><a class="nav-link" href="#">Proyectos</a></li>
-            <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacto.html">Contacto</a>
+            </li>
           </ul>
-          <div class="cta-container">
+          <!-- Botón para iniciar el chat -->
+          <div class="cta-container" id="chatButton">
             <span>¿Hablamos?</span>
             <span class="cta-arrow">&#x2197;</span>
+          </div>
+
+          <!-- Contenedor del chat -->
+          <div id="chatContainer" class="chat-container" style="display: none">
+            <div class="chat-header">
+              <h4>Asistente de IA</h4>
+              <button id="closeChat">X</button>
+            </div>
+            <div class="chat-messages">
+              <!-- El primer mensaje se añadirá dinámicamente desde el JSON -->
+            </div>
+            <div class="chat-input">
+              <input
+                type="text"
+                id="userInput"
+                placeholder="Escribe un mensaje..."
+              />
+              <button id="sendMessage">Enviar</button>
+            </div>
           </div>
         </div>
       </div>
@@ -88,7 +113,7 @@
     </main>
     <div class="background-row">
       <div class="row">
-        <div  class="image service-imagen">
+        <div class="image service-imagen">
           <img
             src="images/diseño_web_fran_bellani.jpg"
             alt="Descripción de la imagen"
@@ -99,7 +124,7 @@
             <span class="bullet">&#8226;</span>
             <span>Pasion por el diseño</span>
           </div>
-          <h2 >Transformo Ideas en Diseños que Inspiran y Cuentan Historias</h2>
+          <h2>Transformo Ideas en Diseños que Inspiran y Cuentan Historias</h2>
           <p>
             Desde siempre, mi pasión por el diseño y la creatividad me ha
             llevado a explorar, aprender y crecer de manera autodidacta. Cada
@@ -133,7 +158,7 @@
               </div>
               <div class="slide-item">
                 <span class="bullet">•</span><span>Wordpress</span>
-              </div>              
+              </div>
             </div>
           </div>
         </div>
@@ -167,7 +192,10 @@
         </div>
         <div class="content">
           <p>
-            Utilizo HTML, CSS3 y JavaScript para crear páginas web estáticas rápidas y visualmente atractivas, así como para maquetar correos electrónicos compatibles con diversos clientes de correo.          </p>
+            Utilizo HTML, CSS3 y JavaScript para crear páginas web estáticas
+            rápidas y visualmente atractivas, así como para maquetar correos
+            electrónicos compatibles con diversos clientes de correo.
+          </p>
         </div>
         <div class="content">
           <p class="tags">
@@ -179,17 +207,20 @@
       <div class="row third-row">
         <div class="content">
           <h4>Desarrollo Webs Dinámico</h4>
-          <h5 class="skill-subtitle">
-            Sitios web dinámicos y gestionables.
-          </h5>
+          <h5 class="skill-subtitle">Sitios web dinámicos y gestionables.</h5>
         </div>
         <div class="content">
           <p>
-            Desarrollo sitios web dinámicos utilizando plataformas como WordPress y Joomla, permitiendo a los usuarios gestionar contenido de manera fácil y eficiente. Ideal para negocios que requieren actualizar regularmente su contenido.
+            Desarrollo sitios web dinámicos utilizando plataformas como
+            WordPress y Joomla, permitiendo a los usuarios gestionar contenido
+            de manera fácil y eficiente. Ideal para negocios que requieren
+            actualizar regularmente su contenido.
           </p>
         </div>
         <div class="content">
-          <p class="tags">#WordPress #Joomla #WebDinámicas #CMS #DesarrolloWeb</p>
+          <p class="tags">
+            #WordPress #Joomla #WebDinámicas #CMS #DesarrolloWeb
+          </p>
         </div>
       </div>
 
@@ -202,29 +233,36 @@
         </div>
         <div class="content">
           <p>
-            Me enfoco en crear interfaces de usuario intuitivas y fáciles de usar, siempre teniendo en cuenta la experiencia global del usuario. A través de la investigación y la prueba de prototipos, diseño soluciones centradas en el usuario.
+            Me enfoco en crear interfaces de usuario intuitivas y fáciles de
+            usar, siempre teniendo en cuenta la experiencia global del usuario.
+            A través de la investigación y la prueba de prototipos, diseño
+            soluciones centradas en el usuario.
           </p>
         </div>
         <div class="content">
           <p class="tags">
-            #UX #UI #DiseñoDeExperiencia #DiseñoDeInterfaz #UXDesign #UserExperience
+            #UX #UI #DiseñoDeExperiencia #DiseñoDeInterfaz #UXDesign
+            #UserExperience
           </p>
         </div>
       </div>
       <div class="row third-row">
         <div class="content">
           <h4>SEO Web</h4>
-          <h5 class="skill-subtitle">
-            Mejora la visibilidad de tu sitio web
-          </h5>
+          <h5 class="skill-subtitle">Mejora la visibilidad de tu sitio web</h5>
         </div>
         <div class="content">
           <p>
-            Optimizo sitios web para que tengan un mejor rendimiento en los motores de búsqueda (Google, Bing, etc.), mejorando la estructura, el contenido y la velocidad del sitio. Mi enfoque en SEO técnico y on-page mejora la visibilidad y posicionamiento de tus páginas.          </p>
+            Optimizo sitios web para que tengan un mejor rendimiento en los
+            motores de búsqueda (Google, Bing, etc.), mejorando la estructura,
+            el contenido y la velocidad del sitio. Mi enfoque en SEO técnico y
+            on-page mejora la visibilidad y posicionamiento de tus páginas.
+          </p>
         </div>
         <div class="content">
           <p class="tags">
-            #SEO #SEOWeb #PosicionamientoWeb #SEOOnPage #MarketingDigital #OptimizaciónWeb
+            #SEO #SEOWeb #PosicionamientoWeb #SEOOnPage #MarketingDigital
+            #OptimizaciónWeb
           </p>
         </div>
       </div>
@@ -237,29 +275,41 @@
         </div>
         <div class="content">
           <p>
-            Apliqué diversas estrategias de marketing digital para aumentar la visibilidad y las conversiones. Desde la gestión de campañas publicitarias hasta la creación de contenido atractivo, me enfoco en optimizar el rendimiento digital y crear relaciones duraderas con los clientes.        </div>
+            Apliqué diversas estrategias de marketing digital para aumentar la
+            visibilidad y las conversiones. Desde la gestión de campañas
+            publicitarias hasta la creación de contenido atractivo, me enfoco en
+            optimizar el rendimiento digital y crear relaciones duraderas con
+            los clientes.
+          </p>
+        </div>
+
         <div class="content">
           <p class="tags">
-            #MarketingDigital #PublicidadOnline #EstrategiaDigital #SEO #RedesSociales #ECommerce
+            #MarketingDigital #PublicidadOnline #EstrategiaDigital #SEO
+            #RedesSociales #ECommerce
           </p>
         </div>
       </div>
       <div class="row third-row">
         <div class="content">
           <h4>React</h4>
-          <h5 class="skill-subtitle">
-            Explorando el desarrollo con React.
-          </h5>
+          <h5 class="skill-subtitle">Explorando el desarrollo con React.</h5>
         </div>
         <div class="content">
           <p>
-            Actualmente estoy aprendiendo React, una de las bibliotecas más populares para construir interfaces de usuario interactivas. Mi objetivo es seguir profundizando en sus conceptos y técnicas para crear aplicaciones web dinámicas y escalables.</div>
+            Actualmente estoy aprendiendo React, una de las bibliotecas más
+            populares para construir interfaces de usuario interactivas. Mi
+            objetivo es seguir profundizando en sus conceptos y técnicas para
+            crear aplicaciones web dinámicas y escalables.
+          </p>
+        </div>
+
         <div class="content">
           <p class="tags">
             #React #DesarrolloWeb #JavaScript #ReactJS #FrontEnd #Programación
           </p>
         </div>
-      </div>      
+      </div>
     </div>
 
     <section class="cta-section">
@@ -267,7 +317,7 @@
       <p>
         Me especializo en transformar tus ideas en soluciones digitales únicas.
         Ponte en contacto conmigo y comencemos a construir tu proyecto.
-      </p>      
+      </p>
       <div id="wrapper">
         <a href="/contacto.html" class="my-super-cool-btn">
           <div class="dots-container">
@@ -278,7 +328,7 @@
           </div>
           <span>Adelante!</span>
         </a>
-      </div>      
+      </div>
     </section>
     <footer class="footer">
       <div class="footer-left">

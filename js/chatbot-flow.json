@@ -1,0 +1,48 @@
+{
+    "start": {
+      "message": "¡Hola! Soy el asistente de IA de Francisco. 👨‍💻 Estoy aquí para ayudarte con tus proyectos web. ¿Te interesa conocer mis servicios o prefieres contactarme directamente? (Escribe 'Servicios' o 'Contacto'). Recuerda, un sitio web bien hecho no solo es bonito, ¡es tu ventana al mundo! 🌍",
+      "options": {
+        "servicios": "services",
+        "contacto": "contact"
+      }
+    },
+    "services": {
+      "message": "¡Genial que quieras saber más sobre mis servicios! 😄 Puedo ayudarte con: Diseño Web Estático (rápido y elegante 💨), Diseño Web Dinámico (interactivo y funcional ⚡), Comercio Electrónico (WooCommerce o Stan Store 🛒) o algo más personalizado para ti. ¿Sobre qué te gustaría saber más? (Escribe Estático, Dinámico, Comercio o Personalizado)",
+      "options": {
+        "estático": "staticWeb",
+        "dinámico": "dynamicWeb",
+        "comercio": "eCommerce",
+        "personalizado": "customService"
+      }
+    },
+    "staticWeb": {
+      "message": "El diseño web estático es ideal para páginas rápidas y con estilo. ¡Menos carga, más velocidad! ⚡ ¿Te gustaría un presupuesto o prefieres contactarme directamente? 😎 (Psst... ¡un sitio rápido también mejora el SEO!)"
+    },
+    "dynamicWeb": {
+      "message": "Las páginas dinámicas son perfectas si te gusta que la web haga magia (bueno, casi 😉). Si quieres una web interactiva donde tus usuarios se sientan en control, ¡aquí estoy! ¿Te gustaría más info o prefieres hablar por WhatsApp? 💬"
+    },
+    "eCommerce": {
+      "message": "¡Vende tus productos online como un experto! WooCommerce o Stan Store, ¡tú eliges! 🛍️ Dejarte guiar por un experto puede mejorar tus ventas (y tus conversiones). ¿Estás listo para empezar a vender? 📈"
+    },
+    "customService": {
+      "message": "¡Me encanta cuando los proyectos tienen un toque único! 🚀 Si tienes una idea loca o algo realmente único en mente, ¡escríbeme! Juntos podemos crear algo increíble. ¿Listo para hacer magia en la web?"
+    },
+    "contact": {
+      "message": "¡Perfecto! Siempre estoy disponible para hablar. Puedes contactarme de las siguientes maneras: (WhatsApp 📱 / Email ✉️ / LinkedIn 🔗). ¡Vamos, no me hagas esperar! 😉",
+      "options": {
+        "whatsapp": "whatsappContact",
+        "email": "emailContact",
+        "linkedin": "linkedinContact"
+      }
+    },
+    "whatsappContact": {
+      "message": "📲 ¡Escríbeme directamente por WhatsApp! Clic aquí para chatear: https://wa.me/123456789. ¡La respuesta está a solo un clic de distancia!"
+    },
+    "emailContact": {
+      "message": "✉️ Prefieres escribir un email? ¡Perfecto! Mándame un mensaje a soporte@tudominio.com. Estoy esperando tu correo con ansias (¡en serio, no puedo esperar!)"
+    },
+    "linkedinContact": {
+      "message": "🔗 Conéctate conmigo en LinkedIn. ¡Nada como una buena red profesional para hacer crecer tu negocio! Aquí tienes el link: https://www.linkedin.com/in/tu-perfil. ¡Hablemos de negocios!"
+    }
+  }
+  
