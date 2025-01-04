@@ -3,8 +3,7 @@
     "message": "¡Hola! Soy el asistente de IA de Fran. 👨‍💻 ¿Quieres saber sobre sus servicios o prefieres contactarlo directamente? (Escribe: 'Servicios' o 'Contacto')",
     "options": {
       "Servicios": "servicios",             
-      "contacto": "contacto"
-      
+      "contacto": "contacto"      
     }
   },
   "servicios": {
@@ -43,7 +42,7 @@
       "linkedin": "linkedinContact" 
     }
   },
-  "contact": {
+  "contacto": {
     "message": "¡Perfecto! Siempre esta disponible para hablar. Puedes contactarlo de las siguientes maneras: (Escribe: WhatsApp 📱 / Email ✉️ / LinkedIn 🔗)",
     "options": {     
       "whatsapp": "whatsappContact",      

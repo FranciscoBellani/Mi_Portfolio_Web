@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  function fuzzyMatch(userInput, options, threshold = 0.85) {
+  function fuzzyMatch(userInput, options, threshold = 0.65) {
     console.log('Realizando fuzzy match con entrada:', userInput);
     const bestMatch = stringSimilarity.findBestMatch(userInput.toLowerCase(), options);
     console.log('Mejor coincidencia encontrada:', bestMatch.bestMatch.target, 'con un rating de', bestMatch.bestMatch.rating);
@@ -186,33 +186,37 @@ document.addEventListener('DOMContentLoaded', function () {
     return null;
   }
 
-  function generateBotResponse(userMessage) {
-    console.log('Generando respuesta para el mensaje:', userMessage);
-    let currentStep = chatFlow.start; // O el paso donde quieras empezar    
-    console.log("Paso actual:", currentStep);  // Ver el paso actual
+  // Función para procesar la respuesta del usuario
+function generateBotResponse(userMessage) {
+  const currentStep = chatFlow.start;  // Asegúrate de empezar desde 'start' para probar
+  console.log("Paso actual:", currentStep);  // Ver el paso actual
 
-    // Verifica si el paso tiene opciones
-    if (currentStep && currentStep.options) {
-      console.log("Opciones del paso:", currentStep.options);  // Log de opciones
-      const matchedOption = fuzzyMatch(userMessage, Object.keys(currentStep.options));
-      console.log("Opciones posibles:", Object.keys(currentStep.options)); // Log de opciones posibles
+  if (currentStep && currentStep.options) {
+    // Ver si hay opciones disponibles
+    console.log("Opciones del paso:", currentStep.options);  // Log de opciones
 
-      if (matchedOption) {
-        console.log('Opción seleccionada:', matchedOption);
-        // Si se encuentra una opción coincidente, avanza al siguiente paso
-        currentStep = currentStep.options[matchedOption];
-        if (currentStep && currentStep.message) {
-          addMessage(currentStep.message, 'bot-message');
-        } else {
-          addMessage('Lo siento, no pude encontrar la respuesta apropiada.', 'bot-message');
-        }
+    // Fuzzy match y mostrar las opciones posibles
+    const matchedOption = fuzzyMatch(userMessage, Object.keys(currentStep.options));
+    console.log("Mejor coincidencia encontrada:", matchedOption);  // Log de la mejor coincidencia
+
+    if (matchedOption) {
+      const nextStepKey = currentStep.options[matchedOption];
+      console.log("Clave del siguiente paso:", nextStepKey);  // Log de la clave del siguiente paso
+
+      const nextStepData = chatFlow[nextStepKey];  // Acceder al siguiente paso usando la clave
+      console.log("Datos del siguiente paso:", nextStepData);  // Log de los datos del siguiente paso
+
+      if (nextStepData) {
+        addMessage(nextStepData.message || "No hay mensaje disponible para este paso.", 'bot-message');
       } else {
-        console.log('No se encontró una opción válida');
-        addMessage('Lo siento, no entiendo tu respuesta. Intenta de nuevo.', 'bot-message');
+        addMessage("Lo siento, no pude encontrar una respuesta apropiada para esta opción.", 'bot-message');
       }
     } else {
-      console.log('No hay más opciones disponibles');
-      addMessage('No hay más opciones, la conversación ha terminado.', 'bot-message');
+      addMessage('Lo siento, no entiendo tu respuesta. Intenta de nuevo.', 'bot-message');
     }
+  } else {
+    addMessage("Lo siento, no se encontraron opciones disponibles.", 'bot-message');
   }
+}
+
 });
