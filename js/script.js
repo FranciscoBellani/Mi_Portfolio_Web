@@ -95,6 +95,12 @@ function scrollSlider() {
 // Ajusta la velocidad del carrusel
 setInterval(scrollSlider, 20); // Cambia el valor para ajustar la velocidad
 
+
+
+
+
+
+
 // Agregamos chat:
 document.addEventListener('DOMContentLoaded', function () {
   // Cargar flujo de conversación desde el archivo JSON
@@ -194,5 +200,3 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 });
-
-
