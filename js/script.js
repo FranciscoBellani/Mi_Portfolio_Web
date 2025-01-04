@@ -98,70 +98,60 @@ setInterval(scrollSlider, 20); // Cambia el valor para ajustar la velocidad
 
 
 
-
-
-
-// Agregamos chat:
 document.addEventListener('DOMContentLoaded', function () {
-  // Cargar flujo de conversación desde el archivo JSON
   loadChatFlow();
 
-  // Botón para abrir el chat
   const chatButton = document.getElementById('chatButton');
   if (chatButton) {
     chatButton.addEventListener('click', startChat);
-  } else {
-    console.error('Botón de chat no encontrado.');
   }
 
-  // Botón para cerrar el chat
   const closeButton = document.getElementById('closeChat');
   if (closeButton) {
     closeButton.addEventListener('click', closeChat);
   }
 
-  // Botón para enviar mensajes
   const sendButton = document.getElementById('sendMessage');
   if (sendButton) {
     sendButton.addEventListener('click', sendMessage);
   }
 
-  // Función para abrir el chat
   function startChat() {
+    console.log('Abriendo el chat...');
     document.getElementById('chatContainer').style.display = 'block';
-    document.getElementById('chatButton').style.display = 'none'; // Ocultar el botón para iniciar chat
-    startConversation(); // Comenzar la conversación automáticamente
+    document.getElementById('chatButton').style.display = 'none';
+    startConversation();
   }
 
-  // Función para cerrar el chat
   function closeChat() {
+    console.log('Cerrando el chat...');
     document.getElementById('chatContainer').style.display = 'none';
-    document.getElementById('chatButton').style.display = 'block'; // Mostrar el botón para iniciar chat
+    document.getElementById('chatButton').style.display = 'block';
   }
 
-  // Función para enviar un mensaje
   function sendMessage() {
     const userMessage = document.getElementById('userInput').value;
+    console.log('Mensaje del usuario:', userMessage);
     if (userMessage) {
       addMessage(userMessage, 'user-message');
-      generateBotResponse(userMessage); // Llamar a la función para procesar el mensaje
-      document.getElementById('userInput').value = ''; // Limpiar el input
+      generateBotResponse(userMessage);
+      document.getElementById('userInput').value = '';
     }
   }
 
-  // Función para agregar un mensaje al chat
   function addMessage(message, sender) {
     const messageContainer = document.createElement('div');
     messageContainer.classList.add('message', sender);
     messageContainer.textContent = message;
     document.querySelector('.chat-messages').appendChild(messageContainer);
-    document.querySelector('.chat-messages').scrollTop = document.querySelector('.chat-messages').scrollHeight; // Scroll hacia abajo
+    document.querySelector('.chat-messages').scrollTop = document.querySelector('.chat-messages').scrollHeight;
+    console.log(sender === 'user-message' ? 'Mensaje enviado por el usuario: ' : 'Mensaje del bot: ', message);
   }
 
-  // Función para cargar el flujo de conversación desde el archivo JSON
   let chatFlow = {};
   function loadChatFlow() {
-    fetch('https://franciscobellani.github.io/Mi_Portfolio_Web/chat/chatbot-flow.json') // Ruta al archivo JSON en la carpeta CHAT
+    console.log('Cargando flujo de conversación...');
+    fetch('https://franciscobellani.github.io/Mi_Portfolio_Web/chat/chatbot-flow.json')
       .then(response => {
         if (!response.ok) {
           throw new Error('No se pudo cargar el flujo de conversación');
@@ -169,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return response.json();
       })
       .then(data => {
-        chatFlow = data; // Asignar el flujo de conversación
+        chatFlow = data;
         console.log('Flujo de conversación cargado:', chatFlow);
       })
       .catch(error => {
@@ -177,26 +167,52 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   }
 
-  // Función para iniciar la conversación (mensaje inicial)
   function startConversation() {
-    if (chatFlow.start) {
+    console.log('Iniciando la conversación...');
+    if (chatFlow.start && chatFlow.start.message) {
       addMessage(chatFlow.start.message, 'bot-message');
     } else {
       addMessage("Lo siento, algo salió mal al cargar el flujo de conversación.", 'bot-message');
     }
   }
 
-  // Función para generar la respuesta del bot basada en el mensaje del usuario
-  let currentStep = 'start'; // Comienza en el paso inicial del flujo
-  function generateBotResponse(message) {
-    const step = chatFlow[currentStep];
+  function fuzzyMatch(userInput, options, threshold = 0.85) {
+    console.log('Realizando fuzzy match con entrada:', userInput);
+    const bestMatch = stringSimilarity.findBestMatch(userInput.toLowerCase(), options);
+    console.log('Mejor coincidencia encontrada:', bestMatch.bestMatch.target, 'con un rating de', bestMatch.bestMatch.rating);
+    if (bestMatch.bestMatch.rating >= threshold) {
+      return bestMatch.bestMatch.target;
+    }
+    return null;
+  }
 
-    // Verifica si el mensaje del usuario corresponde a una opción del flujo
-    if (step.options && step.options[message.toLowerCase()]) {
-      currentStep = step.options[message.toLowerCase()];
-      addMessage(chatFlow[currentStep].message, 'bot-message');
+  function generateBotResponse(userMessage) {
+    console.log('Generando respuesta para el mensaje:', userMessage);
+    let currentStep = chatFlow.start; // O el paso donde quieras empezar    
+    console.log("Paso actual:", currentStep);  // Ver el paso actual
+
+    // Verifica si el paso tiene opciones
+    if (currentStep && currentStep.options) {
+      console.log("Opciones del paso:", currentStep.options);  // Log de opciones
+      const matchedOption = fuzzyMatch(userMessage, Object.keys(currentStep.options));
+      console.log("Opciones posibles:", Object.keys(currentStep.options)); // Log de opciones posibles
+
+      if (matchedOption) {
+        console.log('Opción seleccionada:', matchedOption);
+        // Si se encuentra una opción coincidente, avanza al siguiente paso
+        currentStep = currentStep.options[matchedOption];
+        if (currentStep && currentStep.message) {
+          addMessage(currentStep.message, 'bot-message');
+        } else {
+          addMessage('Lo siento, no pude encontrar la respuesta apropiada.', 'bot-message');
+        }
+      } else {
+        console.log('No se encontró una opción válida');
+        addMessage('Lo siento, no entiendo tu respuesta. Intenta de nuevo.', 'bot-message');
+      }
     } else {
-      addMessage('Lo siento, no entiendo tu respuesta. Intenta de nuevo.', 'bot-message');
+      console.log('No hay más opciones disponibles');
+      addMessage('No hay más opciones, la conversación ha terminado.', 'bot-message');
     }
   }
 });
