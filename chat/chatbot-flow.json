@@ -2,16 +2,14 @@
   "start": {
     "message": "¡Hola! Soy el asistente de IA de Fran. 👨‍💻 ¿Quieres saber sobre sus servicios o prefieres contactarlo directamente? (Escribe: 'Servicios' o 'Contacto')",
     "options": {
-      "servicios": "services",
-      "servicio": "services",
-      "Servicios": "services",           
+      "Servicios": "servicios",             
       "contacto": "contact",
       "contactar": "contact",
       "contactarte": "contact",
       "contactarlo": "contact"
     }
   },
-  "services": {
+  "servicios": {
     "message": "¡Genial que quieras saber más! 😄 Fran ofrece: Diseño Web Estático, Dinámico (autogestionable), eCommerce (Tienda Online) o algo personalizado. ¿Qué te interesa? (Escribe: Estático, Dinámico, Comercio o Personalizado)",
     "options": {
       "estático": "staticWeb",
@@ -59,13 +57,11 @@
   },
   "contact": {
     "message": "¡Perfecto! Siempre esta disponible para hablar. Puedes contactarlo de las siguientes maneras: (Escribe: WhatsApp 📱 / Email ✉️ / LinkedIn 🔗)",
-    "options": {
-      "options": {
+    "options": {     
         "whatsapp": "whatsappContact",
         "email": "emailContact",
         "correo": "emailContact",
-        "linkedin": "linkedinContact"
-      }
+        "linkedin": "linkedinContact" 
     }
   },
   "whatsappContact": {
