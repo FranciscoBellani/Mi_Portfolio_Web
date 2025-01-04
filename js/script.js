@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Función para cargar el flujo de conversación desde el archivo JSON
   let chatFlow = {};
   function loadChatFlow() {
-    fetch('CHAT/chatbot-flow.json') // Ruta al archivo JSON en la carpeta CHAT
+    fetch('../CHAT/chatbot-flow.json') // Ruta al archivo JSON en la carpeta CHAT
       .then(response => {
         if (!response.ok) {
           throw new Error('No se pudo cargar el flujo de conversación');
