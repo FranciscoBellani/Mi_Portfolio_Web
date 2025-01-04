@@ -3,44 +3,33 @@
     "message": "¡Hola! Soy el asistente de IA de Fran. 👨‍💻 ¿Quieres saber sobre sus servicios o prefieres contactarlo directamente? (Escribe: 'Servicios' o 'Contacto')",
     "options": {
       "Servicios": "servicios",             
-      "contacto": "contact",
-      "contactar": "contact",
-      "contactarte": "contact",
-      "contactarlo": "contact"
+      "contacto": "contacto"
+      
     }
   },
   "servicios": {
     "message": "¡Genial que quieras saber más! 😄 Fran ofrece: Diseño Web Estático, Dinámico (autogestionable), eCommerce (Tienda Online) o algo personalizado. ¿Qué te interesa? (Escribe: Estático, Dinámico, Comercio o Personalizado)",
     "options": {
-      "estático": "staticWeb",
-      "estatico": "staticWeb",
-      "estátic": "staticWeb",
-      "dinámico": "dynamicWeb",
-      "dinamico": "dynamicWeb",
-      "dinámic": "dynamicWeb",
-      "comercio": "eCommerce",
-      "comerci": "eCommerce",
+      "estático": "staticWeb",      
+      "dinámico": "dynamicWeb",      
+      "comercio": "eCommerce",      
       "personalizado": "customService"
     }
   },
   "staticWeb": {
     "message": "El diseño web estático es ideal para páginas rápidas y con estilo. ¡Menos carga, más velocidad! ⚡ ¿Te gustaría un presupuesto o prefieres hablarle directamente? 😎 Puedes contactarlo de las siguientes maneras: (Escribe: WhatsApp 📱 / Email ✉️ / LinkedIn 🔗)",
     "options": {
-      "whatsapp": "whatsappContact",
-      "email": "emailContact",
-      "Email": "emailContact",
-      "correo": "emailContact",
-      "linkedin": "linkedinContact",
-      "Linkedin": "linkedinContact"
+      "whatsapp": "whatsappContact",      
+      "email": "emailContact",     
+      "linkedin": "linkedinContact"      
     }
   },
   "dynamicWeb": {
     "message": "Las páginas dinámicas son perfectas si te gusta que la web haga magia (bueno, casi 😉). Si quieres una web interactiva donde sientas que tienes el control, no dudes en contactarlo, escribe: WhatsApp 📱 / Email ✉️ / LinkedIn 🔗)💬",
     "options": {
-      "whatsapp": "whatsappContact",
-      "email": "emailContact",
-      "correo": "emailContact",
-      "linkedin": "linkedinContact"
+      "whatsapp": "whatsappContact",      
+      "email": "emailContact",     
+      "linkedin": "linkedinContact" 
     }
   },
   "eCommerce": {
@@ -49,19 +38,17 @@
   "customService": {
     "message": "¡Me encanta cuando los proyectos tienen un toque único! 🚀 Si tienes una idea loca o algo realmente único en mente, ¡escríbele! Puedes contactarlo de las siguientes maneras: (Escribe: WhatsApp 📱 / Email ✉️ / LinkedIn 🔗)",
     "options": {
-      "whatsapp": "whatsappContact",
-      "email": "emailContact",
-      "correo": "emailContact",
-      "linkedin": "linkedinContact"
+      "whatsapp": "whatsappContact",      
+      "email": "emailContact",     
+      "linkedin": "linkedinContact" 
     }
   },
   "contact": {
     "message": "¡Perfecto! Siempre esta disponible para hablar. Puedes contactarlo de las siguientes maneras: (Escribe: WhatsApp 📱 / Email ✉️ / LinkedIn 🔗)",
     "options": {     
-        "whatsapp": "whatsappContact",
-        "email": "emailContact",
-        "correo": "emailContact",
-        "linkedin": "linkedinContact" 
+      "whatsapp": "whatsappContact",      
+      "email": "emailContact",     
+      "linkedin": "linkedinContact"  
     }
   },
   "whatsappContact": {
