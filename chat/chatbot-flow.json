@@ -30,8 +30,10 @@
     "options": {
       "whatsapp": "whatsappContact",
       "email": "emailContact",
+      "Email": "emailContact",
       "correo": "emailContact",
-      "linkedin": "linkedinContact"
+      "linkedin": "linkedinContact",
+      "Linkedin": "linkedinContact"
     }
   },
   "dynamicWeb": {
