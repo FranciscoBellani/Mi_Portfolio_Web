@@ -32,7 +32,12 @@
     }
   },
   "eCommerce": {
-    "message": "¡Vende tus productos online como un experto! WooCommerce o Stan Store, ¡tú eliges! 🛍️ Dejarte guiar por un experto puede mejorar tus ventas (y tus conversiones). Puedes contactarlo de las siguientes maneras: (Escribe: WhatsApp 📱 / Email ✉️ / LinkedIn 🔗)"
+    "message": "¡Vende tus productos online como un experto! WooCommerce o Stan Store, ¡tú eliges! 🛍️ Dejarte guiar por un experto puede mejorar tus ventas (y tus conversiones). Puedes contactarlo de las siguientes maneras: (Escribe: WhatsApp 📱 / Email ✉️ / LinkedIn 🔗)",
+    "options": {
+      "whatsapp": "whatsappContact",      
+      "email": "emailContact",     
+      "linkedin": "linkedinContact" 
+    }
   },
   "customService": {
     "message": "¡Me encanta cuando los proyectos tienen un toque único! 🚀 Si tienes una idea loca o algo realmente único en mente, ¡escríbele! Puedes contactarlo de las siguientes maneras: (Escribe: WhatsApp 📱 / Email ✉️ / LinkedIn 🔗)",

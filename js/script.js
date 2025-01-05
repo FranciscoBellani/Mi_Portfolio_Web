@@ -5,15 +5,15 @@ function smoothScrollTo(targetId) {
   if (target) {
     console.log("Elemento encontrado:", targetId);
     target.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'  // Puede ajustar 'start', 'center', o 'end' según lo que necesites
+      behavior: "smooth",
+      block: "start", // Puede ajustar 'start', 'center', o 'end' según lo que necesites
     });
   } else {
     console.log("Elemento no encontrado:", targetId);
   }
 }
 
-var words = document.getElementsByClassName('word');
+var words = document.getElementsByClassName("word");
 var wordArray = [];
 var currentWord = 0;
 
@@ -25,59 +25,59 @@ for (var i = 0; i < words.length; i++) {
 // Funcion Letras Animadas
 function changeWord() {
   var cw = wordArray[currentWord];
-  var nw = currentWord == words.length-1 ? wordArray[0] : wordArray[currentWord+1];
+  var nw =
+    currentWord == words.length - 1 ? wordArray[0] : wordArray[currentWord + 1];
   for (var i = 0; i < cw.length; i++) {
     animateLetterOut(cw, i);
   }
-  
+
   for (var i = 0; i < nw.length; i++) {
-    nw[i].className = 'letter behind';
+    nw[i].className = "letter behind";
     nw[0].parentElement.style.opacity = 1;
     animateLetterIn(nw, i);
   }
-  
-  currentWord = (currentWord == wordArray.length-1) ? 0 : currentWord+1;
+
+  currentWord = currentWord == wordArray.length - 1 ? 0 : currentWord + 1;
 }
 
 function animateLetterOut(cw, i) {
-  setTimeout(function() {
-		cw[i].className = 'letter out';
-  }, i*80);
+  setTimeout(function () {
+    cw[i].className = "letter out";
+  }, i * 80);
 }
 
 function animateLetterIn(nw, i) {
-  setTimeout(function() {
-		nw[i].className = 'letter in';
-  }, 340+(i*80));
+  setTimeout(function () {
+    nw[i].className = "letter in";
+  }, 340 + i * 80);
 }
 
 function splitLetters(word) {
   var content = word.innerHTML;
-  word.innerHTML = '';
+  word.innerHTML = "";
   var letters = [];
   for (var i = 0; i < content.length; i++) {
-    var letter = document.createElement('span');
-    letter.className = 'letter';
+    var letter = document.createElement("span");
+    letter.className = "letter";
     letter.innerHTML = content.charAt(i);
     word.appendChild(letter);
     letters.push(letter);
   }
-  
+
   wordArray.push(letters);
 }
 
 changeWord();
 setInterval(changeWord, 4000);
 
-
 // Slider del Index de habilidades
 
-const sliderContainer = document.querySelector('.slider-container');
-const slider = document.querySelector('.slider');
+const sliderContainer = document.querySelector(".slider-container");
+const slider = document.querySelector(".slider");
 
 // Clona los elementos para crear un efecto de bucle infinito
 const items = [...slider.children];
-items.forEach(item => {
+items.forEach((item) => {
   const clone = item.cloneNode(true); // Clona cada ítem
   slider.appendChild(clone); // Agrega los clones al final del slider
 });
@@ -95,128 +95,179 @@ function scrollSlider() {
 // Ajusta la velocidad del carrusel
 setInterval(scrollSlider, 20); // Cambia el valor para ajustar la velocidad
 
-
-
-
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
   loadChatFlow();
 
-  const chatButton = document.getElementById('chatButton');
+  const chatButton = document.getElementById("chatButton");
   if (chatButton) {
-    chatButton.addEventListener('click', startChat);
+    chatButton.addEventListener("click", startChat);
   }
 
-  const closeButton = document.getElementById('closeChat');
+  const closeButton = document.getElementById("closeChat");
   if (closeButton) {
-    closeButton.addEventListener('click', closeChat);
+    closeButton.addEventListener("click", closeChat);
   }
 
-  const sendButton = document.getElementById('sendMessage');
+  const sendButton = document.getElementById("sendMessage");
   if (sendButton) {
-    sendButton.addEventListener('click', sendMessage);
+    sendButton.addEventListener("click", sendMessage);
   }
 
   function startChat() {
-    console.log('Abriendo el chat...');
-    document.getElementById('chatContainer').style.display = 'block';
-    document.getElementById('chatButton').style.display = 'none';
+    console.log("Abriendo el chat...");
+    document.getElementById("chatContainer").style.display = "block";
+    document.getElementById("chatButton").style.display = "none";
     startConversation();
   }
 
   function closeChat() {
-    console.log('Cerrando el chat...');
-    document.getElementById('chatContainer').style.display = 'none';
-    document.getElementById('chatButton').style.display = 'block';
+    console.log("Cerrando el chat...");
+    document.getElementById("chatContainer").style.display = "none";
+    document.getElementById("chatButton").style.display = "block";
   }
 
   function sendMessage() {
-    const userMessage = document.getElementById('userInput').value;
-    console.log('Mensaje del usuario:', userMessage);
-    if (userMessage) {
-      addMessage(userMessage, 'user-message');
+    console.log("Enviando mensaje...");
+  
+    const userInputElement = document.getElementById("userInput");
+    const userMessage = userInputElement.value.trim(); // Limpiar espacios extra
+  
+    if (userMessage !== "") {
+      console.log("Mensaje ingresado por el usuario:", userMessage);
+  
+      addMessage(userMessage, "user-message");
       generateBotResponse(userMessage);
-      document.getElementById('userInput').value = '';
+  
+      console.log("Borrando input...");
+      userInputElement.value = "";
+      console.log("Input borrado.");
+    } else {
+      console.log("El input estaba vacío, no se envió mensaje.");
     }
+  
+    // Enfocar el campo de input en ambos casos
+    console.log("Enfocando el campo de input...");
+    userInputElement.focus();
+    console.log("Input listo para nuevo tipeo.");
   }
+  
 
   function addMessage(message, sender) {
-    const messageContainer = document.createElement('div');
-    messageContainer.classList.add('message', sender);
+    const messageContainer = document.createElement("div");
+    messageContainer.classList.add("message", sender);
     messageContainer.textContent = message;
-    document.querySelector('.chat-messages').appendChild(messageContainer);
-    document.querySelector('.chat-messages').scrollTop = document.querySelector('.chat-messages').scrollHeight;
-    console.log(sender === 'user-message' ? 'Mensaje enviado por el usuario: ' : 'Mensaje del bot: ', message);
+    document.querySelector(".chat-messages").appendChild(messageContainer);
+    document.querySelector(".chat-messages").scrollTop =
+      document.querySelector(".chat-messages").scrollHeight;
+
+    console.log(
+      sender === "user-message"
+        ? "Mensaje enviado por el usuario: "
+        : "Mensaje del bot: ",
+      message
+    );
   }
 
   let chatFlow = {};
+  let currentStepKey = "start";
+
   function loadChatFlow() {
-    console.log('Cargando flujo de conversación...');
-    fetch('https://franciscobellani.github.io/Mi_Portfolio_Web/chat/chatbot-flow.json')
-      .then(response => {
+    console.log("Cargando flujo de conversación...");
+    fetch(
+      "https://franciscobellani.github.io/Mi_Portfolio_Web/chat/chatbot-flow.json"
+    )
+      .then((response) => {
         if (!response.ok) {
-          throw new Error('No se pudo cargar el flujo de conversación');
+          throw new Error("No se pudo cargar el flujo de conversación");
         }
         return response.json();
       })
-      .then(data => {
+      .then((data) => {
         chatFlow = data;
-        console.log('Flujo de conversación cargado:', chatFlow);
+        console.log("Flujo de conversación cargado:", chatFlow);
       })
-      .catch(error => {
-        console.error('Error al cargar el flujo de conversación:', error);
+      .catch((error) => {
+        console.error("Error al cargar el flujo de conversación:", error);
       });
   }
 
   function startConversation() {
-    console.log('Iniciando la conversación...');
+    console.log("Iniciando la conversación...");
     if (chatFlow.start && chatFlow.start.message) {
-      addMessage(chatFlow.start.message, 'bot-message');
+      addMessage(chatFlow.start.message, "bot-message");
     } else {
-      addMessage("Lo siento, algo salió mal al cargar el flujo de conversación.", 'bot-message');
+      addMessage(
+        "Lo siento, algo salió mal al cargar el flujo de conversación.",
+        "bot-message"
+      );
     }
   }
 
   function fuzzyMatch(userInput, options, threshold = 0.65) {
-    console.log('Realizando fuzzy match con entrada:', userInput);
-    const bestMatch = stringSimilarity.findBestMatch(userInput.toLowerCase(), options);
-    console.log('Mejor coincidencia encontrada:', bestMatch.bestMatch.target, 'con un rating de', bestMatch.bestMatch.rating);
+    console.log("Realizando fuzzy match con entrada:", userInput);
+    const bestMatch = stringSimilarity.findBestMatch(
+      userInput.toLowerCase(),
+      options
+    );
+    console.log(
+      "Mejor coincidencia encontrada:",
+      bestMatch.bestMatch.target,
+      "con un rating de",
+      bestMatch.bestMatch.rating
+    );
     if (bestMatch.bestMatch.rating >= threshold) {
       return bestMatch.bestMatch.target;
     }
     return null;
   }
 
-  // Función para procesar la respuesta del usuario
-function generateBotResponse(userMessage) {
-  const currentStep = chatFlow.start;  // Asegúrate de empezar desde 'start' para probar
-  console.log("Paso actual:", currentStep);  // Ver el paso actual
+  function processUserInput(userInput) {
+    console.log("Procesando entrada del usuario:", userInput);
 
-  if (currentStep && currentStep.options) {
-    // Ver si hay opciones disponibles
-    console.log("Opciones del paso:", currentStep.options);  // Log de opciones
+    const currentStep = chatFlow[currentStepKey];
+    console.log("Paso actual:", currentStep);
 
-    // Fuzzy match y mostrar las opciones posibles
-    const matchedOption = fuzzyMatch(userMessage, Object.keys(currentStep.options));
-    console.log("Mejor coincidencia encontrada:", matchedOption);  // Log de la mejor coincidencia
+    if (currentStep && currentStep.options) {
+      const options = currentStep.options;
+      const matchedOption = fuzzyMatch(userInput, Object.keys(options));
 
-    if (matchedOption) {
-      const nextStepKey = currentStep.options[matchedOption];
-      console.log("Clave del siguiente paso:", nextStepKey);  // Log de la clave del siguiente paso
+      console.log("Mejor coincidencia encontrada:", matchedOption);
 
-      const nextStepData = chatFlow[nextStepKey];  // Acceder al siguiente paso usando la clave
-      console.log("Datos del siguiente paso:", nextStepData);  // Log de los datos del siguiente paso
-
-      if (nextStepData) {
-        addMessage(nextStepData.message || "No hay mensaje disponible para este paso.", 'bot-message');
+      if (matchedOption) {
+        const nextStepKey = options[matchedOption];
+        console.log("Clave del siguiente paso:", nextStepKey);
+        currentStepKey = nextStepKey;
+        const nextStepData = chatFlow[nextStepKey];
+        addMessage(
+          nextStepData.message || "No hay mensaje disponible para este paso.",
+          "bot-message"
+        );
+        
       } else {
-        addMessage("Lo siento, no pude encontrar una respuesta apropiada para esta opción.", 'bot-message');
+        addMessage(
+          "Lo siento, no pude encontrar una respuesta apropiada.",
+          "bot-message"
+        );
       }
     } else {
-      addMessage('Lo siento, no entiendo tu respuesta. Intenta de nuevo.', 'bot-message');
+      addMessage(
+        "Lo siento, no se encontraron opciones disponibles.",
+        "bot-message"
+      );
     }
-  } else {
-    addMessage("Lo siento, no se encontraron opciones disponibles.", 'bot-message');
   }
-}
 
+  function generateBotResponse(userMessage) {
+    processUserInput(userMessage);
+  }
+
+  const userInput = document.getElementById("userInput");
+  if (userInput) {
+    userInput.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        sendMessage();
+      }
+    });
+  }
 });
