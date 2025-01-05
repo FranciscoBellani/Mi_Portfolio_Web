@@ -46,9 +46,29 @@
               <a class="nav-link active" href="#">Contacto</a>
             </li>
           </ul>
-          <div class="cta-container">
-            <span>¿Hablamos?</span>
+          <!-- Botón para iniciar el chat -->
+          <div class="cta-container" id="chatButton">
+            <span class="btn_hablamos">¿Hablamos?</span>
             <span class="cta-arrow">&#x2197;</span>
+          </div>
+
+          <!-- Contenedor del chat -->
+          <div id="chatContainer" class="chat-container" style="display: none">
+            <div class="chat-header">
+              <h4>Asistente de IA</h4>
+              <button class="cerrar_ventana_chatbot" id="closeChat">X</button>
+            </div>
+            <div class="chat-messages">
+              <!-- El primer mensaje se añadirá dinámicamente desde el JSON -->
+            </div>
+            <div class="chat-input">
+              <input
+                type="text"
+                id="userInput"
+                placeholder="Escribe un mensaje..."
+              />
+              <button id="sendMessage">Enviar</button>
+            </div>
           </div>
         </div>
       </div>
