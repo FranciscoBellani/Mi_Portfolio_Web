@@ -153,13 +153,30 @@ document.addEventListener("DOMContentLoaded", function () {
   
 
   function addMessage(message, sender) {
+    // Detectar enlaces, correos y números de WhatsApp
+    const linkifiedMessage = message
+      .replace(
+        /(https?:\/\/[^\s]+)/g,
+        '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>'
+      )
+      .replace(
+        /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/g,
+        '<a href="mailto:$1">$1</a>'
+      )
+      .replace(
+        /\b(\+?\d{1,4}[\s.-]?\d{1,4}[\s.-]?\d{4,})\b/g,
+        '<a href="https://wa.me/$1" target="_blank" rel="noopener noreferrer">$1</a>'
+      );
+  
+    // Crear el contenedor del mensaje
     const messageContainer = document.createElement("div");
     messageContainer.classList.add("message", sender);
-    messageContainer.textContent = message;
+    messageContainer.innerHTML = linkifiedMessage;
+  
     document.querySelector(".chat-messages").appendChild(messageContainer);
     document.querySelector(".chat-messages").scrollTop =
       document.querySelector(".chat-messages").scrollHeight;
-
+  
     console.log(
       sender === "user-message"
         ? "Mensaje enviado por el usuario: "
@@ -167,6 +184,7 @@ document.addEventListener("DOMContentLoaded", function () {
       message
     );
   }
+  
 
   let chatFlow = {};
   let currentStepKey = "start";

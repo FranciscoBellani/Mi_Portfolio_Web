@@ -1293,6 +1293,7 @@ footer p {
   padding: 8px 12px;
   margin: 5px 0;
   border-radius: 12px;
+  font-size: .9rem;
 }
 
 .bot-message {
@@ -1303,7 +1304,7 @@ footer p {
   margin-right: 3px;
 }
 .user-message{
-  background-color: #222;
+  background-color: #797878;
   color: #fff;
 }
 
